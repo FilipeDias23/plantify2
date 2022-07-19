@@ -5,26 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(email: "user@mail.com", encrypted_password: "123")
+fakeuser = User.create!(email: "user@mail.com", password: "123456")
 
 puts "Cleaning database..."
 Plant.destroy_all
 
 puts "Creating plants..."
 plantome = { name: "Plantome",
-             type: "",
+             plant_type: "Cactus",
              description: "Lorem ipsum",
              image_url: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
              care_level: 0,
              location: "Barcelona, Spain",
-             user_id: 1 }
+             user: fakeuser }
 planthouse = { name: "Plant House",
-               type: "Rose",
+               plant_type: "Rose",
                description: "Awesome plant",
                image_url: "https://images.unsplash.com/photo-1584589167171-541ce45f1eea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
                care_level: 2,
                location: "Lisbon, Portugal",
-               user_id: 1 }
+               user: fakeuser }
 
 [ plantome, planthouse ].each do |attributes|
   plant = Plant.create!(attributes)

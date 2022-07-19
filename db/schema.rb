@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_07_16_151236) do
   end
 
   create_table "plants", force: :cascade do |t|
-    t.string "type"
+    t.string "plant_type"
     t.text "description"
     t.string "name"
     t.string "image_url"
