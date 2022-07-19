@@ -1,15 +1,36 @@
 .footer {
-  // justify-content: space-between;
-  background: white;
+  background: $color-lightblue;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 35px;
 }
 
 .footer-links {
-  color: aqua;
+  display: inline-flex;
 }
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
 
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
+.social-media-link {
+  margin: 0.5em;
+  p {
+    margin: 0;
+  }
+}
+
+.fab {
+  color: $color-darkblue;
+  font-size: 26px;
+  padding: 0px 5px;
+  &:hover {
+    color: $color-darkgrey;
+  }
+}
+
+ul {
+  display: inline-flex;
+  list-style-type: none;
+  padding: 5px;
+  margin: 0.5em 0;
+  li  {
+    padding: 0 10px;
+  }
+}

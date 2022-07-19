@@ -1,12 +1,43 @@
+
+$color-lightblue: rgb(222, 250, 255);
+$color-darkblue: #2D79BD;
+$color-darkgrey: #596d7e;
+$color-logo-grey: #3B4551;
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $color-lightblue;
+  margin-top: 0;
+  margin-bottom: 35px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-brand {
+  margin: 3px;
+  img {
+  width: 60px;
+  }
+}
+
+.nav-link {
+  margin-right: 10px;
+}
+
+#company-name {
+  font-family: 'Megrim', cursive;
+  font-size: 48px;
+  margin-bottom: 0;
+  color: $color-logo-grey;
+  letter-spacing: -0.1em;
+  transform: scaleY(1.2);
+  // text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+#logo {
+  display: flex;
 }
