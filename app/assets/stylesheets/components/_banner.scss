@@ -1,0 +1,28 @@
+.banner_container {
+  background-color: grey;
+  display: flex;
+  flex: 50%;
+}
+
+.image_banner {
+  height: 500px;
+}
+
+.text_banner {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
+}
