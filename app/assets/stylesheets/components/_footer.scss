@@ -7,30 +7,31 @@
 
 .footer-links {
   display: inline-flex;
+  padding-top: 40px;
 }
 
 .social-media-link {
-  margin: 0.5em;
+  margin: 5px;
   p {
     margin: 0;
+    color: $color-logo-grey;
+    font-size: 18px;
   }
 }
 
 .fab {
   color: $color-darkblue;
-  font-size: 26px;
+  font-size: 36px;
   padding: 0px 5px;
   &:hover {
     color: $color-darkgrey;
   }
 }
 
-ul {
-  display: inline-flex;
-  list-style-type: none;
-  padding: 5px;
-  margin: 0.5em 0;
-  li  {
-    padding: 0 10px;
+.footer-copyright a {
+  text-decoration: none;
+  color: $color-darkblue;
+  &:hover {
+    color: $color-darkgrey;
   }
 }
