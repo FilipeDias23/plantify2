@@ -26,6 +26,23 @@ $color-logo-grey: #3B4551;
   margin-right: 10px;
 }
 
+.form-group {
+  display: flex;
+  flex-grow: 1;
+  margin: 10px;
+}
+
+.form-control {
+  height: 90%;
+}
+
+.btn {
+  display: flex;
+  .fas {
+    padding: 5px;
+  }
+}
+
 #company-name {
   font-family: 'Megrim', cursive;
   font-size: 48px;
