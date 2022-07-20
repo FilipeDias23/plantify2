@@ -1,0 +1,9 @@
+<%= simple_form_for @plant do |p| %>
+  <%= p.input :name %>
+  <%= p.input :plant_type %>
+  <%= p.input :care_level, as: :numeric %>
+  <%= p.input :location %>
+  <%= p.input :image_url, :label => 'Image URL' %>
+  <%= p.input :description, as: :text, :input_html => { :rows => 5 } %>
+  <%= p.submit %>
+<% end %>
