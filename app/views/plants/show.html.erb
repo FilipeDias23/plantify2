@@ -1,3 +1,7 @@
 <h2><%= @plant.name %></h2>
-
+<p><%= link_to "remove this plant",
+               plant_path(@plant),
+               method: :delete,
+               style: "color: red;",
+               data: { confirm: "think twice..."} %></p>
 <p><%= link_to "back to the home", plants_path %></p>

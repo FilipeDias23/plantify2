@@ -6,8 +6,7 @@ class PlantsController < ApplicationController
     @plants = Plant.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @plant = Plant.new
@@ -16,6 +15,8 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     @plant.save
+    # In order to create a plant we'll need a User
+    @plant.user = User.last
     if @plant.save
       redirect_to plant_path(@plant)
     else
@@ -23,8 +24,7 @@ class PlantsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @plant.update(plant_params)
