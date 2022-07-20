@@ -26,7 +26,7 @@ planthouse = { name: "Plant House",
                location: "Lisbon, Portugal",
                user: fakeuser }
 
-[ plantome, planthouse ].each do |attributes|
+[plantome, planthouse].each do |attributes|
   plant = Plant.create!(attributes)
   puts "Created #{plant.name}"
 end
