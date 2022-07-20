@@ -128,7 +128,11 @@ GEM
     minitest (5.16.2)
     msgpack (1.5.3)
     nio4r (2.5.8)
+<<<<<<< HEAD
     nokogiri (1.13.7-x86_64-darwin)
+=======
+    nokogiri (1.13.7-arm64-darwin)
+>>>>>>> aebecc9ea669e72e22411bee2d6b8aed99ab8009
       racc (~> 1.4)
     nokogiri (1.13.7-x86_64-linux)
       racc (~> 1.4)
@@ -245,7 +249,11 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+<<<<<<< HEAD
   x86_64-darwin-20
+=======
+  arm64-darwin-20
+>>>>>>> aebecc9ea669e72e22411bee2d6b8aed99ab8009
   x86_64-linux
 
 DEPENDENCIES
