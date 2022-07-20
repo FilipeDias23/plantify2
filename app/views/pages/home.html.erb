@@ -1,14 +1,29 @@
-<div class="top_text">
-  <p>Find your plant Match 🪴</p>
-</div>
-<div class="banner_container">
-  <div class="text_banner">
-  <h1>Find the perfect plant, near you</h1>
-  <p>Bring your space to life with leafy greens</p>
-  <%= link_to "Shop all Plants", "#", class: "btn btn-flat" %>
-  <%= link_to "Shop all Plants", "#", class: "btn btn-flat" %>
+ <div class="container">
+  <div class="top_text">
+    <p><strong>Find your plant Match</strong>🪴</p>
   </div>
-  <div class="image_banner">
-    <%= cl_image_tag("sonnie-hiles-iANAdaNu7mg-unsplash_nzwvbz") %>
+  <div class="banner_container">
+    <div class="text_banner">
+      <h1>Find the perfect plant, near you</h1>
+      <p>Bring your space to life with leafy greens</p>
+
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" placeholder="location.." style="font-style:italic" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+      <% end %>
+
+    <div class="btn">
+      <%= link_to "Shop all Plants", "#", class: "btn btn-flat" %>
+      <%= link_to "Sell Plants", "#", class: "btn btn-flat" %>
+    </div>
+  </div>
+    <div class="image_banner">
+      <%= cl_image_tag("huy-phan-dM317CbttyY-unsplash_rfdgbf",
+        width: 800, height: 800, crop: :fill) %>
+    </div>
   </div>
 </div>

@@ -1,28 +1,46 @@
 .banner_container {
-  background-color: grey;
+  background-color: #E8F8FA;
   display: flex;
-  flex: 50%;
+}
+
+h1 {
+  font-size: 70px;
+  padding-bottom: 20px;
+  font-family: monserrat;
+  text-align: center;
+}
+
+.btn {
+  padding: 50px;
+  gap: 10px;
 }
 
 .image_banner {
-  height: 500px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
 }
 
 .text_banner {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-right: 34px;
+  margin-left: 50px;
+  display: flex;
+}
+.text_banner p {
+  font-size: 16px;
+  padding-bottom: 10px;
 }
 
 .btn-flat {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #670BFF;
+  background: #00ab5b;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #4D04C4;
+  background: #133d1a;
   color: white;
 }
