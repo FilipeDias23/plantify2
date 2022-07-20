@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 fakeuser = User.create!(email: "user@mail.com", password: "123456")
-
+puts "'fakeuser' created"
 puts "Cleaning database..."
 Plant.destroy_all
 
@@ -14,19 +14,26 @@ puts "Creating plants..."
 plantome = { name: "Plantome",
              plant_type: "Cactus",
              description: "Lorem ipsum",
-             image_url: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+             image_url: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90",
              care_level: 0,
              location: "Barcelona, Spain",
              user: fakeuser }
 planthouse = { name: "Plant House",
                plant_type: "Rose",
                description: "Awesome plant",
-               image_url: "https://images.unsplash.com/photo-1584589167171-541ce45f1eea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+               image_url: "https://images.unsplash.com/photo-1584589167171-541ce45f1eea",
                care_level: 2,
                location: "Lisbon, Portugal",
                user: fakeuser }
+bonita = { name: "Bonita",
+           plant_type: "Orchidea",
+           description: "Unique kind of vegetable",
+           image_url: "https://images.unsplash.com/photo-1601916862476-8bbfd397ba8a",
+           care_level: 2,
+           location: "Lisbon, Portugal",
+           user: fakeuser }
 
-[plantome, planthouse].each do |attributes|
+[plantome, planthouse, bonita].each do |attributes|
   plant = Plant.create!(attributes)
   puts "Created #{plant.name}"
 end
