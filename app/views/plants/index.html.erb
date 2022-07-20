@@ -1,0 +1,7 @@
+<h1>beautiful plants</h1>
+<ul>
+  <% @plants.each do |plant| %>
+    <li><%= link_to plant.name, plant_path(plant)  %></li>
+  <% end %>
+</ul>
+<p><%= link_to "new plant", new_plant_path %></p>
