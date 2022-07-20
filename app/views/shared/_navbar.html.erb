@@ -1,10 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon px-3">
   <div class="container-fluid">
     <div id="logo">
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to "/", class: "navbar-brand" do %>
         <%= image_tag "https://cdn3.iconfinder.com/data/icons/real-estate-20/512/1-18-1024.png" %>
       <% end %>
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to "/", class: "navbar-brand" do %>
         <h3 id="company-name">Plantify</h3>
       <% end %>
     </div>
@@ -25,7 +25,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", "/", class: "nav-link" %>
           </li>
           <%# <li class="nav-item"> %>
             <%# <%= link_to "My Bookings", "#", class: "nav-link" %>
@@ -38,11 +38,12 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Plants", "#", class: "dropdown-item" %>
               <%= link_to "My Bookings", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
+          <li class="nav-item" id="login">
+            <%= link_to "Sign up", new_user_registration_path, method: :get, class: "nav-link" %>
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
