@@ -1,0 +1,13 @@
+<h1>See all your bookings!</h1>
+
+
+<ul>
+<% current_user.bookings.each do |booking| %>
+  <li>
+    <%= booking.plant.name %>
+    <%= booking.user.first_name %>
+  </li>
+<% end %>
+</ul>
+
+<%# <%= link_to "Back to plants", new_plant_booking_path(@plant), method: :get %> %>
