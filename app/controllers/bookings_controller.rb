@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-
   def new
     @plant = Plant.find(params[:plant_id])
     @booking = Booking.new
