@@ -34,12 +34,10 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form', github: 'heartcombo/simple_form'
 
-# Cloudinary
-gem 'dotenv-rails', groups: [:development, :test]
-
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
+  # Cloudinary
   gem 'dotenv-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
