@@ -21,10 +21,14 @@ class BookingsController < ApplicationController
 
     @booking.plant = @plant
     if @booking.save!
-      redirect_to plant_bookings_path(@plant)
+      redirect_to my_bookings_path
     else
       render :new
     end
+  end
+
+  def my_bookings
+    @bookings = Booking.where(user: current_user)
   end
 
   private
