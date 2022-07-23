@@ -16,7 +16,7 @@ class PlantsController < ApplicationController
     @plant = Plant.new(plant_params)
     @plant.save
     # In order to create a plant we'll need a User
-    @plant.user = User.last
+    @plant.user = current_user
     if @plant.save
       redirect_to plant_path(@plant)
     else

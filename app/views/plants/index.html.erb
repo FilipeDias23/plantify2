@@ -1,7 +1,19 @@
-<h1>beautiful plants</h1>
-<ul>
-  <% @plants.each do |plant| %>
-    <li><%= link_to plant.name, plant_path(plant)  %></li>
-  <% end %>
-</ul>
+<div class="collections">
+  <h1>Your Plants</h1>
+
+  <div class="container">
+    <% @plants.each do |plant| %>
+    <div class="card">
+      <%# cl_image_tag("mark-tegethoff-TYUS-cXzy50-unsplash_ik5y5y",
+          width: 320, height: 420, crop: :fill) %>
+      <p><%= link_to plant.name, plant_path(plant) %></p>
+    </div>
+      <%# cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
+          width: 320, height: 420, crop: :fill) %>
+      <%# cl_image_tag("gabriel-jimenez-jin4W1HqgL4-unsplash_rcf4pf",
+          width: 320, height: 420, crop: :fill) %>
+        <%# cl_image_tag("galina-n-miziNqvJx5M-unsplash_uykclo",
+      width: 320, height: 420, crop: :fill) %>
+    <% end %>
+  </div>
 <p><%= link_to "new plant", new_plant_path %></p>
