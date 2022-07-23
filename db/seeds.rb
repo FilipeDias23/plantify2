@@ -11,10 +11,12 @@ Booking.destroy_all
 User.destroy_all
 Plant.destroy_all
 
+
 fakeuser = User.create!(email: "user@mail.com", password: "123456", profile_img: "https://kitt.lewagon.com/placeholder/users/ssaunier", first_name: "fake", last_name: "user", username: "fakeuser")
 puts "'fakeuser' created"
 
 puts "Creating plants..."
+
 require "open-uri"
 
 
