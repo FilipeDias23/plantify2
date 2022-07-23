@@ -6,8 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database..."
-User.destroy_all
-Plant.destroy_all
+
 
 fakeuser = User.create!(email: "user@mail.com", password: "123456", profile_img: "https://kitt.lewagon.com/placeholder/users/ssaunier")
 puts "'fakeuser' created"
