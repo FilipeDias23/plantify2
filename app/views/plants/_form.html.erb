@@ -1,7 +1,7 @@
 <%= simple_form_for @plant do |p| %>
   <%= p.input :name %>
   <%= p.input :plant_type %>
-  <%= p.input :price %>
+  <%= p.input :price, as: :numeric %>
   <%= p.input :care_level, as: :numeric, :input_html => { min: '0', max: '3', step: '1' } %>
   <%= p.input :location %>
   <%= p.input :photo, as: :file %>
