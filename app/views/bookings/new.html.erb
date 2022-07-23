@@ -1,10 +1,15 @@
-<div class="container"><h2><%= @plant.name %></h2>
-  <div><%= image_tag @plant.image_url, width: "300px" %></div>
+<div class="container">
+  <div class="container-body">
+      <h2><%= @plant.name %></h2>
+      <%= image_tag @plant.image_url, width: "300px" %>
 
-  <h3>Create a new booking for <%= @plant.name %><h3>
-  <h4>Don't forget to messge the seller any special details or requests.</h4>
- <%= simple_form_for [ @plant, @booking ] do |f| %>
-    <%= f.input :message %>
-    <%= f.submit "Book now!", class: "btn btn-primary" %>
-  <% end %>
+
+      <h3>Create a new booking for <%= @plant.name %><h3>
+      <h4>Don't forget to messge the seller any special details or requests.</h4>
+      <%= simple_form_for [ @plant, @booking ] do |f| %>
+        <%= f.input :message %>
+        <%= f.submit "Book now!", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
 </div>

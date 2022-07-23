@@ -1,11 +1,12 @@
 <h1>See all your bookings!</h1>
-<ul>
-  <% current_user.bookings.each do |booking| %>
+
+<ol>
+<% current_user.bookings.each do |booking| %>
   <li>
-    <%= booking.plant.name %>
-    <%= booking.user.first_name %>
+    <p>You've booked: <%= booking.plant.name %> on <%= booking.created_at.to_date  %>. </p>
+    <%= booking.plant.user.first_name %>
   </li>
-  <% end %>
-</ul>
+<% end %>
+</ol>
 
 <%# <%= link_to "Back to plants", new_plant_booking_path(@plant), method: :get %>
