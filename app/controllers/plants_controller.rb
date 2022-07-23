@@ -16,7 +16,7 @@ class PlantsController < ApplicationController
     @plant = Plant.new(plant_params)
     @plant.save
     # In order to create a plant we'll need a User
-    @plant.user = User.last
+    @plant.user = current_user
     if @plant.save
       redirect_to plant_path(@plant)
     else
@@ -43,6 +43,6 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:name, :plant_type, :description, :image_url, :care_level, :location, :photo)
+    params.require(:plant).permit(:name, :plant_type, :description, :image_url, :care_level, :location, :price)
   end
 end
