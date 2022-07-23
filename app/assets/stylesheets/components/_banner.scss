@@ -38,9 +38,18 @@ h1 {
   border-radius: 4px;
   background: #00ab5b;
   transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline;
 }
 
 .btn-flat:hover {
   background: #133d1a;
   color: white;
+}
+
+.butt {
+  display: block;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
 }

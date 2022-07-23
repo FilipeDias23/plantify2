@@ -1,10 +1,14 @@
 <h2><%= @plant.name %></h2>
 <div><%= cl_image_tag @plant.image_url.key, width: 400 %></div>
-<p><%= link_to "Edit this plant", edit_plant_path(@plant) %></p>
+
+<div class="butt">
+<p><%= link_to "Edit this plant", edit_plant_path(@plant), class: "btn-flat" %></p>
 <p><%= link_to "Remove this plant",
                plant_path(@plant),
+               class: "btn-flat",
                method: :delete,
                style: "color: red;",
                data: { confirm: "think twice..."} %></p>
-<p><%= link_to "Back to all plants", plants_path %></p>
-<%= link_to "Book this plant", new_plant_booking_path(@plant), method: :get %>
+<p><%= link_to "Back to all plants", plants_path, class: "btn-flat" %></p>
+<%= link_to "Book this plant", new_plant_booking_path(@plant), class: "btn-flat", method: :get %>
+</div>
