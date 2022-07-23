@@ -1,11 +1,15 @@
-<h2><%= @plant.name %></h2>
-<div><%= cl_image_tag @plant.image_url.key, width: 400 %></div>
-<p><%= @plant.description %></p>
-<h2>Price: <%= @plant.price %>€</h4>
-<h4>Type: <%= @plant.plant_type %></h4>
-<h4>Care Level: <%= @plant.care_level %> </h4>
-<h4>Location: <%= @plant.location %></h4>
 
+<div class="card-product">
+  <h2><%= @plant.name %></h2>
+<%= cl_image_tag @plant.image_url.key, width: 400 %>
+  <div class="card-product-infos">
+    <p><%= @plant.description %></p>
+    <p>Price: <%= @plant.price %>€</p>
+    <p>Type: <%= @plant.plant_type %></p>
+    <p>Care Level: <%= @plant.care_level %> </p>
+    <p>Location: <%= @plant.location %></p>
+  </div>
+</div>
 
 <p><%= link_to "remove this plant",
                plant_path(@plant),
