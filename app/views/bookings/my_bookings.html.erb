@@ -1,9 +1,17 @@
-<h1>See all your bookings!</h1>
+<div class="container">
 
-<ol>
-<% @bookings.each do |booking| %>
-  <li>
-    <p>You've booked: <%= booking.plant.name %> on <%= booking.created_at.to_date  %>. </p>
-  </li>
-<% end %>
-</ol>
+  <ol style="list-style: none;">
+   <h3>Your Confirmed Bookings:</h3>
+  <% @bookings.each do |booking| %>
+    <li>
+      <div class="card-product">
+      <%= cl_image_tag booking.plant.image_url.key %>
+      <div class="card-product-infos">
+      <h2><%= booking.plant.name %></h2>
+      <p>Description: <%= booking.plant.description %></p>
+      <p>Booked on <%= booking.created_at.to_date  %> in <%= booking.plant.location  %>.</p>
+    </div>
+  </div>
+  <% end %>
+  </ol>
+</div>
