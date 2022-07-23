@@ -5,7 +5,7 @@
   <% @bookings.each do |booking| %>
     <li>
       <div class="card-product">
-      <%= cl_image_tag booking.plant.image_url.key %>
+      <%= cl_image_tag booking.plant.image_url.key, class: "booking_img" %>
       <div class="card-product-infos">
       <h2><%= booking.plant.name %></h2>
       <p>Description: <%= booking.plant.description %></p>
