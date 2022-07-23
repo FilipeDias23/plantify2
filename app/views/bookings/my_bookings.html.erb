@@ -1,0 +1,9 @@
+<h1>See all your bookings!</h1>
+
+<ol>
+<% @bookings.each do |booking| %>
+  <li>
+    <p>You've booked: <%= booking.plant.name %> on <%= booking.created_at.to_date  %>. </p>
+  </li>
+<% end %>
+</ol>
