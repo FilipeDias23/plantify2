@@ -1,10 +1,4 @@
-  <div class="container">
-  <div class="top_text">
-    <p><strong>Find your plant Match</strong>🪴</p>
-  </div>
-
-
-  <div class="banner_container">
+   <div class="banner_container">
     <div class="text_banner">
       <h1>Find the perfect plant, near you</h1>
       <p>Bring your space to life with leafy greens</p>
@@ -20,7 +14,7 @@
 
     <div class="btn">
       <%= link_to "Shop all Plants", "/plants", class: "btn btn-flat" %>
-      <%= link_to "Sell Plants", "plants/new", class: "btn btn-flat" %>
+      <%= link_to "Create a Plant", "plants/new", class: "btn btn-flat" %>
     </div>
   </div>
 
@@ -42,17 +36,17 @@
   <div class="card">
     <%= cl_image_tag("mark-tegethoff-TYUS-cXzy50-unsplash_ik5y5y",
         width: 320, height: 420, crop: :fill) %>
-    <p>For Advanced Users</p>
+    <p>Near you</p>
   </div>
   <div class="card">
     <%= cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
         width: 320, height: 420, crop: :fill) %>
-    <p>Live Plants</p>
+    <p>Cheaper</p>
   </div>
   <div class="card">
     <%= cl_image_tag("gabriel-jimenez-jin4W1HqgL4-unsplash_rcf4pf",
         width: 320, height: 420, crop: :fill) %>
-    <p>Cautions</p>
+    <p>Type</p>
   </div>
   </div>
 </div>
