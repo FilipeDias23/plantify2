@@ -9,7 +9,7 @@ puts "Cleaning database..."
 User.destroy_all
 Plant.destroy_all
 
-fakeuser = User.create!(email: "user@mail.com", password: "123456", profile_img: "https://kitt.lewagon.com/placeholder/users/ssaunier")
+fakeuser = User.create!(email: "user@mail.com", password: "123456", profile_img: "https://kitt.lewagon.com/placeholder/users/ssaunier", first_name: "fake", last_name: "user", username: "fakeuser")
 puts "'fakeuser' created"
 
 puts "Creating plants..."
@@ -19,6 +19,7 @@ plantome = { name: "Plantome",
              image_url: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90",
              care_level: 0,
              location: "Barcelona, Spain",
+             price: 49,
              user: fakeuser }
 planthouse = { name: "Plant House",
                plant_type: "Rose",
@@ -26,6 +27,7 @@ planthouse = { name: "Plant House",
                image_url: "https://images.unsplash.com/photo-1584589167171-541ce45f1eea",
                care_level: 2,
                location: "Lisbon, Portugal",
+               price: 15,
                user: fakeuser }
 bonita = { name: "Bonita",
            plant_type: "Orchidea",
@@ -33,6 +35,7 @@ bonita = { name: "Bonita",
            image_url: "https://images.unsplash.com/photo-1601916862476-8bbfd397ba8a",
            care_level: 2,
            location: "Lisbon, Portugal",
+           price: 199,
            user: fakeuser }
 
 [plantome, planthouse, bonita].each do |attributes|
