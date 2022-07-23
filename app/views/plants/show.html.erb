@@ -1,9 +1,15 @@
 <h2><%= @plant.name %></h2>
 <div><%= cl_image_tag @plant.image_url.key, width: 400 %></div>
+<p><%= @plant.description %></p>
+<h4>Type: <%= @plant.plant_type %></h4>
+<h4>Care Level: <%= @plant.care_level %> </h4>
+<h4>Location: <%= @plant.location %></h4>
+
+
 <p><%= link_to "remove this plant",
                plant_path(@plant),
                method: :delete,
                style: "color: red;",
                data: { confirm: "think twice..."} %></p>
-<p><%= link_to "back to the plants", plants_path %></p>
 <%= link_to "book this plant", new_plant_booking_path(@plant), method: :get %>
+<p><%= link_to "back to the plants", plants_path %></p>
