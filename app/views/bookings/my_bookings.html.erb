@@ -7,7 +7,7 @@
       <div class="card-product">
       <%= cl_image_tag booking.plant.image_url.key %>
       <div class="card-product-infos">
-      <h2><%= booking.plant.name %></h2>
+      <h2><%= link_to booking.plant.name, plant_path(booking.plant.id), method: :get, style: "text-decoration: none" %></h2>
       <p>Description: <%= booking.plant.description %></p>
       <p>Booked on <%= booking.created_at.to_date  %> in <%= booking.plant.location  %>.</p>
     </div>
