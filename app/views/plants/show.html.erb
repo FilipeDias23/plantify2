@@ -1,5 +1,5 @@
 <h2><%= @plant.name %></h2>
-<div><%= cl_image_tag @plant.image_url.key, width: 400 %></div>
+<div><%= cl_image_tag @plant.image_url.key, width: 400 if @plant.image_url.attached? %></div>
 <p><%= link_to "Edit this plant", edit_plant_path(@plant) %></p>
 <p><%= link_to "Remove this plant",
                plant_path(@plant),
