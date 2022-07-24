@@ -6,7 +6,7 @@
     <li>
       <div class="card-product">
       <% if booking.plant.image_url.attached? %>
-        <%= cl_image_tag booking.plant.image_url.key %>
+        <%= cl_image_tag booking.plant.image_url.key, class: "booking_img" %>
       <% else %>
         <p><em><%= "no image available" %></em></p>
       <% end %>
