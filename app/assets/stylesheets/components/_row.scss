@@ -7,6 +7,9 @@
 
 .card_row {
   gap: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .sort_header {
@@ -15,9 +18,12 @@
   justify-content: space-between;
 }
 
+.sort_header p {
+  font-weight: 600;
+  font-size: .875rem;
+  color: gray;
+}
+
 .card_plants {
   gap: 5px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
 }

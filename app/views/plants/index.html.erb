@@ -2,7 +2,7 @@
  </div>
 <div class="all_plants">
 
-  <div class="row">
+  <div class="row g-0">
     <div class="filter">
       <div class="filter_header">
         <h4>Filter</h4>
@@ -46,8 +46,9 @@
     </div>
 
       <div class="card_row">
+      <% @plants.each do |plant| %>
         <div class="card_plants">
-            <% @plants.each do |plant| %>
+            <%# @plants.each do |plant| %>
               <% if plant.image_url.attached? %>
               <%= cl_image_tag plant.image_url.key, height: "300", width: "300px" %>
             <% else %>
@@ -57,8 +58,8 @@
             <p><%= plant.description %></p>
             <p><%= plant.price %>$  </p>
             <button class="bag btn-primary" type="button">Add to Bag</button>
+            </div>
             <% end %>
-           </div>
       </div>
   </div>
 
