@@ -11,19 +11,19 @@
 
       <div class="filter_form">
         <div class="filter_attributes">
-          <h3 class="filter__attribute">Care Level</h3>
+          <h4 class="attribute">Care Level</h4>
           <p>▼</p>
         </div>
         <div class="filter_attributes">
-        <h3 class="filter__attribute">Type</h3>
+        <h4 class="attribute">Type</h4>
           <p>▼</p>
         </div>
         <div class="filter_attributes">
-          <h3 class="filter__attribute">Plant Height</h3>
+          <h4 class="attribute">Plant Height</h4>
           <p>▼</p>
         </div>
         <div class="filter_attributes">
-          <h3 class="filter__attribute">Price</h3>
+          <h4 class="attribute">Price</h4>
           <p>▼</p>
         </div>
     </div>
@@ -31,36 +31,35 @@
 
 
   <div class="plant_cards">
-    <div class="sort_header">
-        <div><p><strong>...results</strong></p></div>
+      <div class="sort_header">
+          <div><p><strong>...results</strong></p></div>
         <div class="dropdown">
-          <button class="drop btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Sort by
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Sort by: price(high to low)</a></li>
-          <li><a class="dropdown-item" href="#">Sort by: price(low to high)</a></li>
-          <li><a class="dropdown-item" href="#">Sort by: Newest</a></li>
-        </ul>
-    </div>
+            <button class="drop btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Sort by
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Sort by: price(high to low)</a></li>
+            <li><a class="dropdown-item" href="#">Sort by: price(low to high)</a></li>
+            <li><a class="dropdown-item" href="#">Sort by: Newest</a></li>
+          </ul>
+        </div>
     </div>
 
-    <% @plants.each do |plant| %>
-
-    <div class="card_row">
-      <div class="card_plants">
-            <% if plant.image_url.attached? %>
-            <%= cl_image_tag plant.image_url.key, height: "300", width: "300px" %>
-          <% else %>
-            <p><em><%= "no image available" %></em></p>
-          <% end %>
-          <p><%= link_to plant.name, plant_path(plant) %></p>
-          <p><%= plant.description %></p>
-          <p><%= plant.price %>$  </p>
-          <% end %>
-        <button class="bag btn-primary" type="button">Add to Bag</button>
+      <div class="card_row">
+        <div class="card_plants">
+            <% @plants.each do |plant| %>
+              <% if plant.image_url.attached? %>
+              <%= cl_image_tag plant.image_url.key, height: "300", width: "300px" %>
+            <% else %>
+              <p><em><%= "no image available" %></em></p>
+            <% end %>
+            <p><%= link_to plant.name, plant_path(plant) %></p>
+            <p><%= plant.description %></p>
+            <p><%= plant.price %>$  </p>
+            <button class="bag btn-primary" type="button">Add to Bag</button>
+            <% end %>
+           </div>
       </div>
-    </div>
   </div>
 
 </div>

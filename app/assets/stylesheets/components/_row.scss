@@ -1,6 +1,6 @@
 .row {
   display: flex;
-  padding: 0px 100px 0px 100px;
+  padding: 0px 60px 0px 60px;
   gap: 50px;
 }
 
@@ -17,4 +17,7 @@
 
 .card_plants {
   gap: 5px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
