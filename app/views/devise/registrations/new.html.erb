@@ -25,9 +25,10 @@
       <%= f.input :username,
                   required: true,
                   input_html: { autocomplete: "username" } %>
-      <%= f.input :profile_img,
+      <%= f.input :profile_pic,
+                  as: :file,
                   required: true,
-                  input_html: { autocomplete: "profile_img" } %>
+                  input_html: { autocomplete: "profile_pic" } %>
     </div>
 
     <div class="form-actions">

@@ -1,6 +1,12 @@
 <div class="card-product">
   <h2><%= @plant.name %></h2>
-<%= cl_image_tag @plant.image_url.key, width: 400 %>
+  
+  <% if @plant.image_url.attached? %>
+    <%= cl_image_tag @plant.image_url.key, width: 400 %>
+  <% else %>
+    <p><em><%= "no image available" %></em></p>
+  <% end %>
+  
   <div class="card-product-infos">
     <p><%= @plant.description %></p>
     <p>Price: <%= @plant.price %>€</p>
@@ -9,10 +15,10 @@
     <p>Location: <%= @plant.location %></p>
   </div>
 </div>
-<p><%= link_to "remove this plant",
+<p><%= link_to "Edit this plant", edit_plant_path(@plant) %></p>
+<p><%= link_to "Remove this plant",
                plant_path(@plant),
                method: :delete,
-               style: "color: red;",
                data: { confirm: "think twice..."} %></p>
-<%= link_to "book this plant", new_plant_booking_path(@plant), method: :get %>
-<p><%= link_to "back to the plants", plants_path %></p>
+<p><%= link_to "Book this plant", new_plant_booking_path(@plant), method: :get %></p>
+<p><%= link_to "Back to all plants", plants_path %></p>

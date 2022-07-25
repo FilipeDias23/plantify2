@@ -5,9 +5,13 @@
   <% @bookings.each do |booking| %>
     <li>
       <div class="card-product">
-      <%= cl_image_tag booking.plant.image_url.key, class: "booking_img" %>
+      <% if booking.plant.image_url.attached? %>
+        <%= cl_image_tag booking.plant.image_url.key, class: "booking_img" %>
+      <% else %>
+        <p><em><%= "no image available" %></em></p>
+      <% end %>
       <div class="card-product-infos">
-      <h2><%= booking.plant.name %></h2>
+      <h2><%= link_to booking.plant.name, plant_path(booking.plant.id), method: :get, style: "text-decoration: none" %></h2>
       <p>Description: <%= booking.plant.description %></p>
       <p>Booked on <%= booking.created_at.to_date  %> in <%= booking.plant.location  %>.</p>
     </div>

@@ -36,6 +36,10 @@ class PlantsController < ApplicationController
     redirect_to plants_path
   end
 
+  def my_plants
+    @plants = Plant.where(user: current_user)
+  end
+
   private
 
   def set_plant

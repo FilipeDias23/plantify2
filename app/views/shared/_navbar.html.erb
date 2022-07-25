@@ -37,11 +37,13 @@
             <%# <%= link_to "My Plants", "#", class: "nav-link" %>
           <%# </li> %>
           <%# <li class="nav-item dropdown"> %>
-
-            <%= image_tag current_user.profile_img, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-
+            <% if current_user.profile_pic.attached? %>
+              <%= cl_image_tag current_user.profile_pic.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag current_user.profile_img, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Plants", plants_path, class: "dropdown-item" %>
+              <%= link_to "My Plants", my_plants_path, class: "dropdown-item" %>
               <%= link_to "My Bookings", my_bookings_path, method: :get, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
