@@ -1,0 +1,20 @@
+.row {
+  display: flex;
+  padding: 0px 100px 0px 100px;
+  gap: 50px;
+}
+
+
+.card_row {
+  gap: 10px;
+}
+
+.sort_header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_plants {
+  gap: 5px;
+}

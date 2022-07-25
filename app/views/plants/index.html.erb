@@ -15,7 +15,7 @@
           <p>▼</p>
         </div>
         <div class="filter_attributes">
-          <h3 class="filter__attribute">Type</h3>
+        <h3 class="filter__attribute">Type</h3>
           <p>▼</p>
         </div>
         <div class="filter_attributes">
@@ -27,29 +27,44 @@
           <p>▼</p>
         </div>
     </div>
-
+  </div>
 
 
   <div class="plant_cards">
-   <% @plants.each do |plant| %>
-      <% if plant.image_url.attached? %>
-        <%= cl_image_tag plant.image_url.key, width: "300px" %>
-      <% else %>
-        <p><em><%= "no image available" %></em></p>
-      <% end %>
-      <% cl_image_tag("mark-tegethoff-TYUS-cXzy50-unsplash_ik5y5y",
-          width: 320, height: 420, crop: :fill) %>
-      <p><%= link_to plant.name, plant_path(plant) %></p>
-      <p><%= plant.description %></p>
-        <% cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
-          width: 320, height: 420, crop: :fill) %>
-      <% cl_image_tag("gabriel-jimenez-jin4W1HqgL4-unsplash_rcf4pf",
-          width: 320, height: 420, crop: :fill) %>
-        <% cl_image_tag("galina-n-miziNqvJx5M-unsplash_uykclo",
-      width: 320, height: 420, crop: :fill) %>
-    <% end %>
+    <div class="sort_header">
+        <div><p><strong>...results</strong></p></div>
+        <div class="dropdown">
+          <button class="drop btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Sort by
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Sort by: price(high to low)</a></li>
+          <li><a class="dropdown-item" href="#">Sort by: price(low to high)</a></li>
+          <li><a class="dropdown-item" href="#">Sort by: Newest</a></li>
+        </ul>
+    </div>
+    </div>
+
+    <% @plants.each do |plant| %>
+
+    <div class="card_row">
+      <div class="card_plants">
+            <% if plant.image_url.attached? %>
+            <%= cl_image_tag plant.image_url.key, height: "300", width: "300px" %>
+          <% else %>
+            <p><em><%= "no image available" %></em></p>
+          <% end %>
+          <p><%= link_to plant.name, plant_path(plant) %></p>
+          <p><%= plant.description %></p>
+          <p><%= plant.price %>$  </p>
+          <% end %>
+        <button class="bag btn-primary" type="button">Add to Bag</button>
+      </div>
+    </div>
   </div>
+
 </div>
 
 
-<p><%= link_to "new plant", new_plant_path %></p>
+
+ <p><%= link_to "new plant", new_plant_path %></p>
