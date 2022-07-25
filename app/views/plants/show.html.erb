@@ -1,12 +1,12 @@
 <div class="card-product">
   <h2><%= @plant.name %></h2>
-  
+
   <% if @plant.image_url.attached? %>
     <%= cl_image_tag @plant.image_url.key, width: 400 %>
   <% else %>
     <p><em><%= "no image available" %></em></p>
   <% end %>
-  
+
   <div class="card-product-infos">
     <p><%= @plant.description %></p>
     <p>Price: <%= @plant.price %>€</p>
