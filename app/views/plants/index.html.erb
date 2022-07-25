@@ -1,25 +1,55 @@
-<div class="collections">
-  <h1>All available Plants</h1>
+<div class="header"><h1>All available Plants</h1>
+ </div>
+<div class="all_plants">
 
-  <div class="container">
-    <% @plants.each do |plant| %>
-    <div class="card">
+  <div class="row">
+    <div class="filter">
+      <div class="filter_header">
+        <h4>Filter</h4>
+        <h6>reset</h6>
+      </div>
+
+      <div class="filter_form">
+        <div class="filter_attributes">
+          <h3 class="filter__attribute">Care Level</h3>
+          <p>▼</p>
+        </div>
+        <div class="filter_attributes">
+          <h3 class="filter__attribute">Type</h3>
+          <p>▼</p>
+        </div>
+        <div class="filter_attributes">
+          <h3 class="filter__attribute">Plant Height</h3>
+          <p>▼</p>
+        </div>
+        <div class="filter_attributes">
+          <h3 class="filter__attribute">Price</h3>
+          <p>▼</p>
+        </div>
+    </div>
+
+
+
+  <div class="plant_cards">
+   <% @plants.each do |plant| %>
       <% if plant.image_url.attached? %>
         <%= cl_image_tag plant.image_url.key, width: "300px" %>
       <% else %>
         <p><em><%= "no image available" %></em></p>
       <% end %>
-      <%# cl_image_tag("mark-tegethoff-TYUS-cXzy50-unsplash_ik5y5y",
+      <% cl_image_tag("mark-tegethoff-TYUS-cXzy50-unsplash_ik5y5y",
           width: 320, height: 420, crop: :fill) %>
       <p><%= link_to plant.name, plant_path(plant) %></p>
       <p><%= plant.description %></p>
-    </div>
-      <%# cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
+        <% cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
           width: 320, height: 420, crop: :fill) %>
-      <%# cl_image_tag("gabriel-jimenez-jin4W1HqgL4-unsplash_rcf4pf",
+      <% cl_image_tag("gabriel-jimenez-jin4W1HqgL4-unsplash_rcf4pf",
           width: 320, height: 420, crop: :fill) %>
-        <%# cl_image_tag("galina-n-miziNqvJx5M-unsplash_uykclo",
+        <% cl_image_tag("galina-n-miziNqvJx5M-unsplash_uykclo",
       width: 320, height: 420, crop: :fill) %>
     <% end %>
   </div>
+</div>
+
+
 <p><%= link_to "new plant", new_plant_path %></p>
