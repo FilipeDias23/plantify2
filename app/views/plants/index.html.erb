@@ -55,7 +55,8 @@
               <p><em><%= "no image available" %></em></p>
             <% end %>
             <h3><strong><%= link_to plant.name, plant_path(plant) %></strong></h3>
-            <h5><%= plant.price %>$</h5>
+            <p><%= plant.plant_type %></p>
+            <h5><%= plant.price %>€</h5>
             <button class="bag btn-primary" type="button">Booking</button>
             </div>
             <% end %>

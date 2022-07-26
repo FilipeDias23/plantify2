@@ -13,12 +13,16 @@
 }
 
 .bag {
-  padding: 8px;
-}
-.btn-primary {
+  padding: 7px;
   border-color: #313232;
   color: #313232;
   box-shadow: none;
   background-color:white;
   font-weight: 800;
+}
+
+.bag:hover {
+  background-color: #313232;
+  color: white;
+  border-color: #313232;
 }
