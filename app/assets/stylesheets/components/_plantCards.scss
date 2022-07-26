@@ -21,6 +21,9 @@
   font-size: 1.25rem;
 }
 
+.card_plants img {
+  object-fit: cover;
+}
 .card_plants p {
   text-align: center;
   text-transform: uppercase;
