@@ -12,6 +12,7 @@
   display: grid;
   grid-gap: 16px;
   border: 0.0625rem solid #dedede;
+  font-family: 'Ibarra Real Nova', serif;
 }
 
 .card_plants a {
@@ -24,5 +25,9 @@
 }
 
 .card_plants h3 {
+  text-align: center;
+}
+
+.card_plants h5 {
   text-align: center;
 }
