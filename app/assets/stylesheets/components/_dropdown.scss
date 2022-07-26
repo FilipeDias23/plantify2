@@ -8,8 +8,18 @@
   gap: 4px;
   border-radius: 4px;
   background-color: #fefefe;
-  border: 1px solid #dedede;
-  color: black;
+  border: 1px solid #313232;
+  color: #313232;
+}
+
+.drop:hover {
+  background-color: #313232;
+  color: white;
+  border-color: #313232;
+}
+
+.sort_item:hover {
+  color: #20847c;
 }
 
 .bag {

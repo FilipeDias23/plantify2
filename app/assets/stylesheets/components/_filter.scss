@@ -2,20 +2,51 @@
   border: 0.0625rem solid #dedede;
   width: 278px;
   height: fit-content;
+  display: inline-grid;
 }
 
 .filter_header {
   display: flex;
-  justify-content: space-between;
   padding: 9px 2px 7px 2px;
-  background-color: darkseagreen;
+  background-color: #a4ccc6;
+  justify-content: center;
+}
+
+.filter_header h4 {
+  font-weight: 700;
 }
 
 .filter_attributes {
-  display: flex;
-  justify-content: space-between;
+  width: 270px;
+  heigh: 40px;
 }
 
-.filter_attributes h4 {
+.filter_element {
+  padding: 8px;
+  gap: 4px;
+  border-radius: 4px;
+  background-color: #fefefe00;
+  border: 0px;
+  color: #313232;
+  font-weight: 600;
+}
+
+.filter_element:hover {
+  color: #20847c;
+  background-color: #fefefe00;
+}
+
+.dropdown {
+  display: grid;
+}
+
+.filter_reset {
+  display: flex;
+  padding: 9px 2px 7px 2px;
+  justify-content: center;
+}
+
+.filter_reset {
+  text-decoration: underline;
 
 }
