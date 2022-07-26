@@ -14,14 +14,14 @@
       <p><%= link_to plant.name, plant_path(plant) %></p>
       <p><%= plant.description %></p>
       <% if policy(plant).edit? %>
-          <p><%= link_to "Edit", edit_plant_path(plant), style: "text-decoration: none" %></p>
+          <%= link_to "Edit", edit_plant_path(plant), style: "text-decoration: none" %>
       <% end %>
       <% if policy(plant).destroy? %>
-          <p><%= link_to "Remove",
-                          plant_path(plant),
-                          style: "text-decoration: none",
-                          method: :delete,
-                          data: { confirm: "think twice..."} %></p>
+          <%= link_to "Remove",
+                      plant_path(plant),
+                      style: "text-decoration: none",
+                      method: :delete,
+                      data: { confirm: "think twice..."} %>
       <% end %>
     </div>
       <%# cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
@@ -32,4 +32,6 @@
       width: 320, height: 420, crop: :fill) %>
     <% end %>
   </div>
-<p><%= link_to "new plant", new_plant_path %></p>
+<% if policy(Plant).new? %>
+  <p><%= link_to "new plant", new_plant_path %></p>
+<% end %>
