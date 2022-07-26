@@ -13,6 +13,16 @@
           width: 320, height: 420, crop: :fill) %>
       <p><%= link_to plant.name, plant_path(plant) %></p>
       <p><%= plant.description %></p>
+      <% if policy(plant).edit? %>
+          <p><%= link_to "Edit", edit_plant_path(plant), style: "text-decoration: none" %></p>
+      <% end %>
+      <% if policy(plant).destroy? %>
+          <p><%= link_to "Remove",
+                          plant_path(plant),
+                          style: "text-decoration: none",
+                          method: :delete,
+                          data: { confirm: "think twice..."} %></p>
+      <% end %>
     </div>
       <%# cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
           width: 320, height: 420, crop: :fill) %>

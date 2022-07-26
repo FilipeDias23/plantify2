@@ -17,12 +17,16 @@
 </div>
 
 <div class="butt">
-<p><%= link_to "Edit this plant", edit_plant_path(@plant), class: "btn-flat" %></p>
-<p><%= link_to "Remove this plant",
-               plant_path(@plant),
-               class: "btn-flat",
-               method: :delete,
-               data: { confirm: "think twice..."} %></p>
+<% if policy(@plant).edit? %>
+  <p><%= link_to "Edit this plant", edit_plant_path(@plant), class: "btn-flat" %></p>
+<% end %>
+<% if policy(@plant).destroy? %>
+  <p><%= link_to "Remove this plant",
+                plant_path(@plant),
+                class: "btn-flat",
+                method: :delete,
+                data: { confirm: "think twice..."} %></p>
+<% end %>
 <p><%= link_to "Back to all plants", plants_path, class: "btn-flat" %></p>
 <%= link_to "Book this plant", new_plant_booking_path(@plant), class: "btn-flat", method: :get %>
 </div>
