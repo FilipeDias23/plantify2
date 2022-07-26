@@ -41,8 +41,7 @@ class PlantsController < ApplicationController
 
   def my_plants
     @plants = Plant.where(user: current_user)
-    # @plants = policy_scope(Plant)
-    # authorize @plants
+    authorize @plants
   end
 
   private
