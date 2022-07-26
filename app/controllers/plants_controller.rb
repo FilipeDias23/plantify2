@@ -3,17 +3,20 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @plants = Plant.all
+    # @plants = Plant.all
+    @plants = policy_scope(Plant)
   end
 
   def show; end
 
   def new
     @plant = Plant.new
+    authorize @plant
   end
 
   def create
     @plant = Plant.new(plant_params)
+    authorize @plant
     @plant.save
     # In order to create a plant we'll need a User
     @plant.user = current_user
@@ -38,12 +41,15 @@ class PlantsController < ApplicationController
 
   def my_plants
     @plants = Plant.where(user: current_user)
+    # @plants = policy_scope(Plant)
+    # authorize @plants
   end
 
   private
 
   def set_plant
     @plant = Plant.find(params[:id])
+    authorize @plant
   end
 
   def plant_params
