@@ -50,14 +50,14 @@
         <div class="card_plants">
             <%# @plants.each do |plant| %>
               <% if plant.image_url.attached? %>
-              <%= cl_image_tag plant.image_url.key, height: "300", width: "300px" %>
+              <%= cl_image_tag plant.image_url.key, height: "240", width: "240" %>
             <% else %>
               <p><em><%= "no image available" %></em></p>
             <% end %>
-            <p><%= link_to plant.name, plant_path(plant) %></p>
+            <h3><strong><%= link_to plant.name, plant_path(plant) %></strong></h3>
             <p><%= plant.description %></p>
             <p><%= plant.price %>$  </p>
-            <button class="bag btn-primary" type="button">Add to Bag</button>
+            <button class="bag btn-primary" type="button">Booking</button>
             </div>
             <% end %>
       </div>
