@@ -5,13 +5,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  padding: 15px;
-  margin: 8px;
+  padding: 20px;
+  max-width: fit-content;
+  gap: 18px;
 }
 
 .card-product img {
   height: 100%;
-  width: 100px;
+  width: 120px;
   object-fit: cover;
 }
 
@@ -19,7 +20,6 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  width: 200px;
 }
 
 .card-product p {
@@ -31,7 +31,7 @@
 }
 
 .card-product .card-product-infos {
-  padding: 36px;
+  padding: 16px;
 }
 
 .card-product li {
@@ -40,6 +40,6 @@
 
 .booking_img {
   height: 100%;
-  width: 50px;
+  width: 120px;
   object-fit: cover;
 }

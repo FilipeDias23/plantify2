@@ -1,12 +1,18 @@
 <div class="collections">
-  <h1>Your Plants</h1>
+  <h1>All available Plants</h1>
 
   <div class="container">
     <% @plants.each do |plant| %>
     <div class="card">
+      <% if plant.image_url.attached? %>
+        <%= cl_image_tag plant.image_url.key, width: "300px" %>
+      <% else %>
+        <p><em><%= "no image available" %></em></p>
+      <% end %>
       <%# cl_image_tag("mark-tegethoff-TYUS-cXzy50-unsplash_ik5y5y",
           width: 320, height: 420, crop: :fill) %>
       <p><%= link_to plant.name, plant_path(plant) %></p>
+      <p><%= plant.description %></p>
     </div>
       <%# cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
           width: 320, height: 420, crop: :fill) %>
