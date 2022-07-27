@@ -4,7 +4,7 @@
 
 <div class="all_plants">
   <div class="row g-0">
-  
+
     <div class="filter">
        <div class="filter_header">
           <h4>Filter</h4>
@@ -27,12 +27,12 @@
           </div>
           <div class="filter_reset">
           <h6>reset</h6>
-          </div>     
+          </div>
        </div>
     </div>
 
     <div class="plant_cards">
-    
+
        <div class="sort_header">
           <div><p><strong>...results</strong></p></div>
           <div class="dropdown">
@@ -59,8 +59,8 @@
             <p><%= plant.plant_type %></p>
             <h5><%= plant.price %>€</h5>
             <button class="bag btn-primary" type="button">Booking</button>
-            
-            # Links with authorization, depending on who created the plant (still to be styled)
+
+            <%# Links with authorization, depending on who created the plant (still to be styled) %>
             <% if current_user != plant.user %>
               <%= link_to "Book", new_plant_booking_path(plant), style: "text-decoration: none", method: :get %>
             <% end %>
@@ -74,16 +74,16 @@
                           method: :delete,
                           data: { confirm: "think twice..."} %>
              <%# end %>
-             
+
           </div>
         <% end %>
-      </div>    
-      
-    </div>  
-    
+      </div>
+
+    </div>
+
   </div>
 </div>
-  
+
 <% if policy(Plant).new? %>
   <p><%= link_to "new plant", new_plant_path %></p>
 <% end %>
