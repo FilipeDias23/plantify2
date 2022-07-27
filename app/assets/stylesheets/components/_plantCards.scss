@@ -1,0 +1,45 @@
+.plant_cards {
+  overflow: hidden;
+  max-width: fit-content;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  gap: 2px;
+  width: 1070px;
+}
+
+.card_plants {
+  display: grid;
+  grid-gap: 16px;
+  border: 0.0625rem solid #dedede;
+  font-family: 'Ibarra Real Nova', serif;
+}
+
+.card_plants a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.card_plants img {
+  object-fit: cover;
+}
+.card_plants p {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: .75rem;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.card_plants h3 {
+  text-align: center;
+}
+
+.card_plants a:hover {
+  color: #20847c;
+}
+
+.card_plants h5 {
+  text-align: center;
+}

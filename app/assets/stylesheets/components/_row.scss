@@ -1,0 +1,33 @@
+.row {
+  display: flex;
+  padding: 0px 60px 0px 60px;
+  gap: 50px;
+}
+
+
+.card_row {
+  gap: 25px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.sort_header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sort_header p {
+  font-weight: 600;
+  font-size: .875rem;
+  color: gray;
+  top: 22px;
+  position: relative;
+  left: 65px;
+}
+
+.card_plants {
+  gap: 5px;
+}
