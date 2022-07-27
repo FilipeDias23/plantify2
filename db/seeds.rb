@@ -7,6 +7,8 @@ User.destroy_all
 Plant.destroy_all
 
 fakeuser = User.create!(email: "user@mail.com", password: "123456", profile_img: "https://images.unsplash.com/photo-1571512599285-9ac4fdf3dba9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80", first_name: "fake", last_name: "user", username: "fakeuser")
+fakeuser2 = User.create!(email: "user2@mail.com", password: "123456", profile_img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80", first_name: "fake2", last_name: "user2", username: "fakeuser2")
+fakeuser3 = User.create!(email: "user3@mail.com", password: "123456", profile_img: "https://pbs.twimg.com/media/FV_ZZHZXgAAGpBu?format=jpg&name=small", first_name: "fake3", last_name: "user3", username: "fakeuser3")
 
 puts "'fakeuser' created"
 puts "Creating plants..."
@@ -34,9 +36,17 @@ bonita = { name: "Bonita",
            care_level: 2,
            location: "Lisbon, Portugal",
            price: 199,
-           user: fakeuser }
+           user: fakeuser2 }
+evergreen = { name: "Evergreen",
+           plant_type: "Tree",
+           description: "Can't be greener than that",
+          # image_url: "https://res.cloudinary.com/dukzi3epq/image/upload/v1658574965/cwbgv94rbyz8hsnftyrc.jpg",
+           care_level: 5,
+           location: "Rome, Italy",
+           price: 27,
+           user: fakeuser3 }
 
-[plantome, planthouse, bonita].each do |plnt|
+[plantome, planthouse, bonita, evergreen].each do |plnt|
   # url = plt[:image_url]
   # file = URI.open(url)
   plant = Plant.new(plnt)
