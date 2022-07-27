@@ -6,7 +6,7 @@ Booking.destroy_all
 User.destroy_all
 Plant.destroy_all
 
-fakeuser = User.create!(email: "user@mail.com", password: "123456", profile_img: "https://kitt.lewagon.com/placeholder/users/ssaunier", first_name: "fake", last_name: "user", username: "fakeuser")
+fakeuser = User.create!(email: "user@mail.com", password: "123456", profile_img: "https://images.unsplash.com/photo-1571512599285-9ac4fdf3dba9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80", first_name: "fake", last_name: "user", username: "fakeuser")
 
 puts "'fakeuser' created"
 puts "Creating plants..."
