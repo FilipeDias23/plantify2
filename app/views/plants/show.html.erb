@@ -1,8 +1,10 @@
 <div class="plants2">
   <div class="container" style="width:600px";>
       <h2><strong><%= @plant.name.upcase %></strong></h2>
-      <% if @plant.image_url.attached? %>
-        <%= cl_image_tag @plant.image_url.key, width: "100%", class: "plant-show" %>
+      <% if @plant.image.attached? %>
+        <%= cl_image_tag @plant.image.key, width: "100%", class: "plant-show" %>
+      <% elsif @plant.image_url %>
+        <%= image_tag @plant.image_url, width: "100%", class: "plant-show" %>
       <% else %>
         <p><em><%= "no image available" %></em></p>
       <% end %>
