@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   resources :plants do
     resources :bookings, only: [ :index, :show, :new, :create ]
+    collection do
+      get :easy
+    end
   end
   resources :bookings, only: [:destroy]
   get "my-bookings", to: "bookings#my_bookings"

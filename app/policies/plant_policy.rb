@@ -26,4 +26,8 @@ class PlantPolicy < ApplicationPolicy
   def my_plants?
     true
   end
+
+  def easy?
+    true
+  end
 end

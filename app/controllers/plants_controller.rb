@@ -44,6 +44,11 @@ class PlantsController < ApplicationController
     authorize @plants
   end
 
+  def easy
+    @plants = Plant.where(care_level: 0)
+    authorize @plants
+  end
+
   private
 
   def set_plant
