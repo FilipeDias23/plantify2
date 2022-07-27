@@ -5,32 +5,38 @@
   padding-bottom: 80px;
 }
 
-.card {
-  display: flex;
+.card_collection {
   align-content: center;
-  // max-width: fit-content;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 12px 0px;
   border: 3px solid #555
 }
 
-.card:hover {
+.card_collection:hover {
   transform: scale(1.1) rotate(2deg);
 }
 
-.card p {
+.card_collection img {
+  object-fit: cover;
+}
+.card_collection  p {
   color: black;
   background-color: white;
   text-align: center;
   font-size: 20px;
   font-family: sans-serif;
   padding-top: 13px;
+  margin-bottom: 0rem;
+  padding-bottom: 7px;
 }
 
 .collections h1 {
   font-size: 40px;
   font-family: monserrat;
   padding-left: 20px;
+  padding-top: 30px;
+  text-align: center;
+  padding-bottom: 20px;
   padding-top: 30px;
 }
