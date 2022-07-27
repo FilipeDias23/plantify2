@@ -8,9 +8,11 @@
 .card {
   display: flex;
   align-content: center;
-  max-width: fit-content;
+  // max-width: fit-content;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 12px 0px;
+  border: 3px solid #555
 }
 
 .card:hover {

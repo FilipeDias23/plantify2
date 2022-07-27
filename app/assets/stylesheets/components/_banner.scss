@@ -34,12 +34,13 @@ h1 {
 
 .btn-flat {
   color: white;
-  padding: 8px 24px;
+  padding: 9px 4px;
   border-radius: 4px;
   background: #00ab5b;
   transition: background 0.3s ease;
   text-decoration: none;
   display: inline;
+  margin: 4px;
 }
 
 .btn-flat:hover {
@@ -52,4 +53,10 @@ h1 {
   justify-content: center;
   flex-direction: column;
   width: 200px;
+}
+
+h2 {
+  text-align: center;
+  margin: 24px;
+  color: white;
 }
