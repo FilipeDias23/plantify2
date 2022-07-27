@@ -6,10 +6,6 @@ class BookingPolicy < ApplicationPolicy
     # end
   end
 
-  def new?
-    true
-  end
-
   def create?
     user != record.plant.user
   end

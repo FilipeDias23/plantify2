@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @plant = Plant.find(params[:plant_id])
     @booking = Booking.new
     @booking.user = current_user
+    @booking.plant = @plant
     authorize @booking
   end
 

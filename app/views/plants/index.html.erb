@@ -23,6 +23,9 @@
                       method: :delete,
                       data: { confirm: "think twice..."} %>
       <% end %>
+      <% if current_user != plant.user %>
+        <%= link_to "Book", new_plant_booking_path(plant), style: "text-decoration: none", method: :get %>
+      <% end %>
     </div>
       <%# cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
           width: 320, height: 420, crop: :fill) %>

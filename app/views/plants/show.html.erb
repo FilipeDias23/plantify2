@@ -28,5 +28,7 @@
                 data: { confirm: "think twice..."} %></p>
 <% end %>
 <p><%= link_to "Back to all plants", plants_path, class: "btn-flat" %></p>
-<%= link_to "Book this plant", new_plant_booking_path(@plant), class: "btn-flat", method: :get %>
+<% if current_user != @plant.user %>
+  <p><%= link_to "Book this plant", new_plant_booking_path(@plant), class: "btn-flat", method: :get %></p>
+<% end %>
 </div>
