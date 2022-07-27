@@ -1,0 +1,38 @@
+.dropdown {
+  padding: 6px;
+  gap: 8px;
+}
+
+.drop {
+  padding: 8px;
+  gap: 4px;
+  border-radius: 4px;
+  background-color: #fefefe;
+  border: 1px solid #313232;
+  color: #313232;
+}
+
+.drop:hover {
+  background-color: #313232;
+  color: white;
+  border-color: #313232;
+}
+
+.sort_item:hover {
+  color: #20847c;
+}
+
+.bag {
+  padding: 7px;
+  border-color: #313232;
+  color: #313232;
+  box-shadow: none;
+  background-color:white;
+  font-weight: 800;
+}
+
+.bag:hover {
+  background-color: #313232;
+  color: white;
+  border-color: #313232;
+}

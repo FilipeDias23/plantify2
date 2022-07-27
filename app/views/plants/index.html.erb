@@ -1,25 +1,70 @@
-<div class="collections">
-  <h1>All available Plants</h1>
+<div class="header"><h1>All available Plants</h1>
+ </div>
+<div class="all_plants">
 
-  <div class="container">
-    <% @plants.each do |plant| %>
-    <div class="card">
-      <% if plant.image_url.attached? %>
-        <%= cl_image_tag plant.image_url.key, width: "300px" %>
-      <% else %>
-        <p><em><%= "no image available" %></em></p>
-      <% end %>
-      <%# cl_image_tag("mark-tegethoff-TYUS-cXzy50-unsplash_ik5y5y",
-          width: 320, height: 420, crop: :fill) %>
-      <p><%= link_to plant.name, plant_path(plant) %></p>
-      <p><%= plant.description %></p>
-    </div>
-      <%# cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
-          width: 320, height: 420, crop: :fill) %>
-      <%# cl_image_tag("gabriel-jimenez-jin4W1HqgL4-unsplash_rcf4pf",
-          width: 320, height: 420, crop: :fill) %>
-        <%# cl_image_tag("galina-n-miziNqvJx5M-unsplash_uykclo",
-      width: 320, height: 420, crop: :fill) %>
-    <% end %>
+  <div class="row g-0">
+    <div class="filter">
+      <div class="filter_header">
+        <h4>Filter</h4>
+      </div>
+
+      <div class="filter_form">
+        <div class="dropdown">
+            <button class="filter_element btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Type
+          </button>
+        </div>
+        <div class="dropdown">
+            <button class="filter_element btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Care Level
+          </button>
+        </div>
+        <div class="dropdown">
+            <button class="filter_element btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Price
+          </button>
+        </div>
+        <div class="filter_reset">
+        <h6>reset</h6>
+      </div>
+     </div>
   </div>
-<p><%= link_to "new plant", new_plant_path %></p>
+
+
+  <div class="plant_cards">
+      <div class="sort_header">
+          <div><p><strong>...results</strong></p></div>
+        <div class="dropdown">
+            <button class="drop btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Sort by
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="sort_item dropdown-item" href="#">Sort by: price(high to low)</a></li>
+            <li><a class="sort_item dropdown-item" href="#">Sort by: price(low to high)</a></li>
+            <li><a class="sort_item dropdown-item" href="#">Sort by: Newest</a></li>
+          </ul>
+        </div>
+    </div>
+
+      <div class="card_row">
+      <% @plants.each do |plant| %>
+        <div class="card_plants">
+              <% if plant.image_url.attached? %>
+              <%= cl_image_tag plant.image_url.key, height: "240", width: "240" %>
+            <% else %>
+              <p><em><%= "no image available" %></em></p>
+            <% end %>
+            <h3><strong><%= link_to plant.name, plant_path(plant) %></strong></h3>
+            <p><%= plant.plant_type %></p>
+            <h5><%= plant.price %>€</h5>
+            <button class="bag btn-primary" type="button">Booking</button>
+            </div>
+            <% end %>
+      </div>
+  </div>
+
+</div>
+
+
+
+ <p><%= link_to "new plant", new_plant_path %></p>
