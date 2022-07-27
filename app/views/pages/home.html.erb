@@ -1,50 +1,50 @@
-   <div class="banner_container">
+  <div class="banner_container">
     <div class="text_banner">
       <h1>Find the perfect plant, near you</h1>
       <p>Bring your space to life with leafy greens</p>
 
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" placeholder="location.." style="font-style:italic" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </div>
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" placeholder="location.." style="font-style:italic" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="search_btn btn btn-flat">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
       <% end %>
 
-    <div class="btn">
-      <%= link_to "Shop all Plants", "/plants", class: "btn btn-flat" %>
-      <%= link_to "Create a Plant", "plants/new", class: "btn btn-flat" %>
-    </div>
-  </div>
+      <div class="btn">
+        <%= link_to "Shop all Plants", "/plants", class: "banner_btn btn btn-flat" %>
+        <%= link_to "Create a Plant", "plants/new", class: "banner_btn btn btn-flat" %>
+      </div>
+      </div>
 
-    <div class="image_banner">
-      <%= cl_image_tag("huy-phan-dM317CbttyY-unsplash_rfdgbf",
-        width: 800, height: 800, crop: :fill) %>
-    </div>
-  </div>
+      <div class="image_banner">
+        <%= image_tag("/assets/banner.jpg", width: 800, height: 800, crop: :fill)%>
+      </div>
+   </div>
 </div>
+
 <div class="collections">
   <h1>Featured Collections</h1>
 
   <div class="cards">
-    <div class="card">
-      <%= cl_image_tag("galina-n-miziNqvJx5M-unsplash_uykclo",
+    <div class="card_collection">
+      <%= image_tag("/assets/beginner.jpg",
         width: 320, height: 420, crop: :fill) %>
     <p>Best for Beginners</p>
   </div>
-  <div class="card">
-    <%= cl_image_tag("mark-tegethoff-TYUS-cXzy50-unsplash_ik5y5y",
+  <div class="card_collection">
+    <%= image_tag("/assets/nearyou.jpg",
         width: 320, height: 420, crop: :fill) %>
     <p>Near you</p>
   </div>
-  <div class="card">
-    <%= cl_image_tag("kevin-lessy-aKqw_M1CmfI-unsplash_oocmoj",
+  <div class="card_collection">
+    <%= image_tag("/assets/cheaper.jpg",
         width: 320, height: 420, crop: :fill) %>
     <p>Cheaper</p>
   </div>
-  <div class="card">
-    <%= cl_image_tag("gabriel-jimenez-jin4W1HqgL4-unsplash_rcf4pf",
+  <div class="card_collection">
+    <%= image_tag("/assets/soil.jpg",
         width: 320, height: 420, crop: :fill) %>
     <p>Type</p>
   </div>

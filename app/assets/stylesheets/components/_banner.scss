@@ -3,7 +3,7 @@
   display: flex;
   }
 
-h1 {
+.text_banner h1 {
   font-size: 70px;
   padding-bottom: 20px;
   font-family: monserrat;
@@ -16,7 +16,8 @@ h1 {
 }
 
 .image_banner {
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  object-fit: cover;
 }
 
 .text_banner {
@@ -32,7 +33,18 @@ h1 {
   padding-bottom: 10px;
 }
 
-.btn-flat {
+.search_btn {
+  color: white;
+  padding: 3px 4px;
+  border-radius: 4px;
+  background: #00ab5b;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline;
+  margin: 4px;
+}
+
+.banner_btn {
   color: white;
   padding: 9px 4px;
   border-radius: 4px;
@@ -53,10 +65,4 @@ h1 {
   justify-content: center;
   flex-direction: column;
   width: 200px;
-}
-
-h2 {
-  text-align: center;
-  margin: 24px;
-  color: white;
 }
