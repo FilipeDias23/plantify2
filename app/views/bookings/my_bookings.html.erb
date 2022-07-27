@@ -7,8 +7,10 @@
   <% @bookings.each do |booking| %>
     <li>
       <div class="card-product">
-      <% if booking.plant.image_url.attached? %>
-        <%= cl_image_tag booking.plant.image_url.key, class: "booking_img" %>
+      <% if booking.plant.image.attached? %>
+        <%= cl_image_tag booking.plant.image.key, class: "booking_img" %>
+      <% elsif booking.plant.image_url %>
+        <%= image_tag booking.plant.image_url, width: "100%", class: "plant-show" %>
       <% else %>
         <p><em><%= "no image available" %></em></p>
       <% end %>
