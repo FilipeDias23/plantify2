@@ -12,14 +12,17 @@ class BookingsController < ApplicationController
   def new
     @plant = Plant.find(params[:plant_id])
     @booking = Booking.new
+    @booking.user = current_user
+    @booking.plant = @plant
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
     @plant = Plant.find(params[:plant_id])
-
+    @booking.user = current_user
     @booking.plant = @plant
+    authorize @booking
     if @booking.save!
       redirect_to my_bookings_path
     else
@@ -29,6 +32,7 @@ class BookingsController < ApplicationController
 
   def my_bookings
     @bookings = Booking.where(user: current_user)
+    authorize @bookings
   end
 
   private
