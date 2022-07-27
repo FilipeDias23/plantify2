@@ -1,34 +1,47 @@
-<div class="card-product">
-  <h2><%= @plant.name %></h2>
+<div class="plants2">
+  <div class="container" style="width:600px";>
+      <h2><strong><%= @plant.name.upcase %></strong></h2>
+      <% if @plant.image_url.attached? %>
+        <%= cl_image_tag @plant.image_url.key, width: "100%", class: "plant-show" %>
+      <% else %>
+        <p><em><%= "no image available" %></em></p>
+      <% end %>
 
-  <% if @plant.image_url.attached? %>
-    <%= cl_image_tag @plant.image_url.key, width: 400 %>
-  <% else %>
-    <p><em><%= "no image available" %></em></p>
-  <% end %>
 
-  <div class="card-product-infos">
-    <p><%= @plant.description %></p>
-    <p>Price: <%= @plant.price %>€</p>
-    <p>Type: <%= @plant.plant_type %></p>
-    <p>Care Level: <%= @plant.care_level %> </p>
-    <p>Location: <%= @plant.location %></p>
+
+    <div class="card" style="width:100%">
+      <div class="card-header">
+          <strong><%= @plant.description %></strong>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Type:</strong> <%= @plant.plant_type %></li>
+          <li class="list-group-item"><strong>Price:</strong> <%= @plant.price %>€</li>
+          <li class="list-group-item"><strong>Care Level:</strong> <%= @plant.care_level %></li>
+          <li class="list-group-item"><strong>Location:</strong> <%= @plant.location %></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+      <div class="btn-group btn-group-sm" style="text-align:center">
+        <% if policy(@plant).edit? %>
+          <%= link_to "Edit this plant", edit_plant_path(@plant), class: "btn-flat btn-sm" %>
+        <% end %>
+        <% if policy(@plant).destroy? %>
+          <%= link_to "Remove this plant",
+                        plant_path(@plant),
+                        class: "btn-flat",
+                        method: :delete,
+                        data: { confirm: "think twice..."} %></p>
+        <% end %>
+        <%= link_to "Back to all plants", plants_path, class: "btn-flat" %></p>
+        <% if current_user != @plant.user %>
+          <%= link_to "Book this plant", new_plant_booking_path(@plant), class: "btn-flat", method: :get %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="butt">
-<% if policy(@plant).edit? %>
-  <p><%= link_to "Edit this plant", edit_plant_path(@plant), class: "btn-flat" %></p>
-<% end %>
-<% if policy(@plant).destroy? %>
-  <p><%= link_to "Remove this plant",
-                plant_path(@plant),
-                class: "btn-flat",
-                method: :delete,
-                data: { confirm: "think twice..."} %></p>
-<% end %>
-<p><%= link_to "Back to all plants", plants_path, class: "btn-flat" %></p>
-<% if current_user != @plant.user %>
-  <p><%= link_to "Book this plant", new_plant_booking_path(@plant), class: "btn-flat", method: :get %></p>
-<% end %>
 </div>
