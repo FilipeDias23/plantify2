@@ -7,7 +7,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    user != record.plant.user
+    user != record.plant.user || user.admin
   end
 
   def my_bookings?
