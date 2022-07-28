@@ -1,6 +1,6 @@
 <div class="plants2">
   <div class="container" style="width:600px";>
-      <h2><strong><%= @plant.name.upcase %></strong></h2>
+      <h2 class="plant-header"><strong><%= @plant.name.titleize %></strong></h2>
       <% if @plant.image.attached? %>
         <%= cl_image_tag @plant.image.key, width: "100%", class: "plant-show" %>
       <% elsif @plant.image_url %>
@@ -17,10 +17,10 @@
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Type:</strong> <%= @plant.plant_type %></li>
+          <li class="list-group-item"><strong>Type:</strong> <%= @plant.plant_type.capitalize %></li>
           <li class="list-group-item"><strong>Price:</strong> <%= @plant.price %>€</li>
           <li class="list-group-item"><strong>Care Level:</strong> <%= @plant.care_level %></li>
-          <li class="list-group-item"><strong>Location:</strong> <%= @plant.location %></li>
+          <li class="list-group-item"><strong>Location:</strong> <%= @plant.location.titleize %></li>
         </ul>
       </div>
     </div>
