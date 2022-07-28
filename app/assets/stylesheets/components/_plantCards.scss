@@ -34,9 +34,10 @@
   text-align: center;
 }
 
-.card_plants a:hover {
-  color: #20847c;
+.card_plants a {
+  color: #313232;
 }
+
 
 .card_plants h5 {
   text-align: center;
@@ -44,19 +45,13 @@
 
 .bag {
   padding: 7px;
-  border-color: #313232;
+  border-color: #026838;
   color: #313232;
   box-shadow: none;
-  background-color:white;
+  background-color:#00ab5b;
   font-weight: 800;
 }
 
 .bag:hover {
-  background-color: #313232;
-  color: white;
-  border-color: #313232;
-}
-
-.bag a:hover {
-  color: white;
+  background-color: #b8f1c2;
 }
