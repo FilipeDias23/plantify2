@@ -34,4 +34,8 @@ class PlantPolicy < ApplicationPolicy
   def near?
     true
   end
+
+  def cheaper?
+    true
+  end
 end

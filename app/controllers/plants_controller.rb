@@ -55,6 +55,11 @@ class PlantsController < ApplicationController
     authorize @plants
   end
 
+  def cheaper
+    @plants = Plant.order(:price)
+    authorize @plants
+  end
+
   private
 
   def set_plant
