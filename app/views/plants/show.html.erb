@@ -1,8 +1,10 @@
 <div class="plants2">
   <div class="container" style="width:600px";>
       <h2><strong><%= @plant.name.upcase %></strong></h2>
-      <% if @plant.image_url.attached? %>
-        <%= cl_image_tag @plant.image_url.key, width: "100%", class: "plant-show" %>
+      <% if @plant.image.attached? %>
+        <%= cl_image_tag @plant.image.key, width: "100%", class: "plant-show" %>
+      <% elsif @plant.image_url %>
+        <%= image_tag @plant.image_url, width: "100%", class: "plant-show" %>
       <% else %>
         <p><em><%= "no image available" %></em></p>
       <% end %>
@@ -37,10 +39,10 @@
                         method: :delete,
                         data: { confirm: "think twice..."} %></p>
         <% end %>
-        <%= link_to "Back to all plants", plants_path, class: "btn-flat" %></p>
-        <% if current_user != @plant.user %>
+        <% if current_user != @plant.user || current_user.admin %>
           <%= link_to "Book this plant", new_plant_booking_path(@plant), class: "btn-flat", method: :get %>
         <% end %>
+        <%= link_to "Back to all plants", plants_path, class: "btn-flat" %></p>
       </div>
     </div>
   </div>

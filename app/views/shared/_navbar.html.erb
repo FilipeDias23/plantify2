@@ -45,6 +45,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Plants", my_plants_path, class: "dropdown-item" %>
               <%= link_to "My Bookings", my_bookings_path, method: :get, class: "dropdown-item" %>
+              <%= link_to "Edit my Account", edit_user_registration_path, method: :get, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

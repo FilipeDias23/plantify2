@@ -1,0 +1,22 @@
+<div class="container">
+  <ol style="list-style: none;">
+   <h3>Near <%= current_user.location %></h3>
+  <% @plants.each do |plant| %>
+    <li>
+      <div class="card-product">
+      <% if plant.image.attached? %>
+        <%= cl_image_tag plant.image.key %>
+      <% elsif plant.image_url %>
+        <%= image_tag plant.image_url, height: "240", width: "240" %>
+      <% else %>
+        <p><em><%= "no image available" %></em></p>
+      <% end %>
+      <div class="card-product-infos">
+      <h2><%= link_to plant.name, plant_path(plant.id), method: :get, style: "text-decoration: none" %></h2>
+      <p>Description: <%= plant.description %></p>
+      <p>Created on <%= plant.created_at.to_date  %> in <%= plant.location  %>.</p>
+    </div>
+  </div>
+  <% end %>
+  </ol>
+</div>

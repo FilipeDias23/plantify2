@@ -1,10 +1,12 @@
 <div class="container">
   <div class="container-body">
       <h2><%= @plant.name %></h2>
-      <% if @plant.image_url.attached? %>
-      <%= cl_image_tag @plant.image_url.key, width: "300px" %>
+      <% if @plant.image.attached? %>
+        <%= cl_image_tag @plant.image.key, width: "300px" %>
+      <% elsif @plant.image_url %>
+        <%= image_tag @plant.image_url, width: "100%", class: "plant-show" %>
       <% else %>
-      <p><em><%= "no image available" %></em></p>
+        <p><em><%= "no image available" %></em></p>
       <% end %>
 
       <h3>Create a new booking for <%= @plant.name %><h3>

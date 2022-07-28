@@ -44,6 +44,22 @@ class PlantsController < ApplicationController
     authorize @plants
   end
 
+  # Collections
+  def easy
+    @plants = Plant.where(care_level: 0)
+    authorize @plants
+  end
+
+  def near
+    @plants = Plant.near(current_user.location)
+    authorize @plants
+  end
+
+  def cheaper
+    @plants = Plant.order(:price)
+    authorize @plants
+  end
+
   private
 
   def set_plant
@@ -52,6 +68,6 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:name, :plant_type, :description, :image_url, :care_level, :location, :price)
+    params.require(:plant).permit(:name, :plant_type, :description, :image_url, :care_level, :location, :price, :image)
   end
 end

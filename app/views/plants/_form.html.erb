@@ -4,7 +4,7 @@
   <%= p.input :price, as: :numeric %>
   <%= p.input :care_level, as: :numeric, :input_html => { min: '0', max: '3', step: '1' } %>
   <%= p.input :location %>
-  <%= p.input :image_url, as: :file %>
+  <%= p.input :image, as: :file %>
   <%= p.input :description, as: :text, :input_html => { :rows => 5 } %>
   <%= p.submit %>
 <% end %>

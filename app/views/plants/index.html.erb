@@ -1,5 +1,6 @@
 <div class="header">
   <h1>All available Plants</h1>
+  <p><%= link_to "back", root_path %> </p>
 </div>
 
 <div class="all_plants">
@@ -50,20 +51,23 @@
       <div class="card_row">
         <% @plants.each do |plant| %>
           <div class="card_plants">
-            <% if plant.image_url.attached? %>
-              <%= cl_image_tag plant.image_url.key, height: "240", width: "240" %>
+            <% if plant.image.attached? %>
+              <%= cl_image_tag plant.image.key, height: "240", width: "240" %>
+            <% elsif plant.image_url %>
+              <%= image_tag plant.image_url, height: "240", width: "240" %>
             <% else %>
               <p><em><%= "no image available" %></em></p>
             <% end %>
+
             <h3><strong><%= link_to plant.name, plant_path(plant) %></strong></h3>
             <p><%= plant.plant_type %></p>
             <h5><%= plant.price %>€</h5>
-            <button class="bag btn-primary" type="button">Booking</button>
 
             <%# Links with authorization, depending on who created the plant (still to be styled) %>
-            <% if current_user != plant.user %>
-              <%= link_to "Book", new_plant_booking_path(plant), class:"bag btn-primary", style: "border-color: black", method: :get %>
+            <% if current_user != plant.user || current_user.admin %>
+              <button class="bag" type="button"><%= link_to "Book", new_plant_booking_path(plant), method: :get %> </button>
             <% end %>
+            
             <%# if policy(plant).edit? %>
                 <%# link_to "Edit", edit_plant_path(plant), style: "text-decoration: none" %>
             <%# end %>
@@ -74,13 +78,11 @@
                           method: :delete,
                           data: { confirm: "think twice..."} %>
              <%# end %>
-
           </div>
         <% end %>
+        
       </div>
-
     </div>
-
   </div>
 </div>
 
