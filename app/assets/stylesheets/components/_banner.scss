@@ -1,6 +1,8 @@
 .banner_container {
   background-color: #e8faf8;
   display: flex;
+  gap: 50px;
+  padding-left: 120px;
   }
 
 .text_banner h1 {
@@ -8,16 +10,17 @@
   padding-bottom: 20px;
   font-family: monserrat;
   text-align: center;
+  line-height: 70px;
 }
 
-.btn {
-  padding: 50px;
-  gap: 10px;
+.img_banner {
+  object-fit: cover;
+  width: 100%;
 }
 
 .image_banner {
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  object-fit: cover;
+  width: 100%;
 }
 
 .text_banner {
