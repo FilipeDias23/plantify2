@@ -1,6 +1,6 @@
 <div class="plants2">
   <div class="container" style="width:600px";>
-      <h2><strong><%= @plant.name.upcase %></strong></h2>
+      <h2 class="plant-header"><strong><%= @plant.name.titleize %></strong></h2>
       <% if @plant.image.attached? %>
         <%= cl_image_tag @plant.image.key, width: "100%", class: "plant-show" %>
       <% elsif @plant.image_url %>
@@ -13,14 +13,15 @@
 
     <div class="card" style="width:100%">
       <div class="card-header">
-          <strong><%= @plant.description %></strong>
+          <strong><%= @plant.name.titleize %></strong>
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Type:</strong> <%= @plant.plant_type %></li>
+          <li class="list-group-item"><strong>Type:</strong> <%= @plant.plant_type.capitalize %></li>
           <li class="list-group-item"><strong>Price:</strong> <%= @plant.price %>€</li>
           <li class="list-group-item"><strong>Care Level:</strong> <%= @plant.care_level %></li>
-          <li class="list-group-item"><strong>Location:</strong> <%= @plant.location %></li>
+          <li class="list-group-item"><strong>Location:</strong> <%= @plant.location.titleize %></li>
+          <li class="list-group-item"><strong>Description:</strong> <%= @plant.description.capitalize %></li>
         </ul>
       </div>
     </div>
@@ -30,19 +31,19 @@
 
       <div class="btn-group btn-group-sm" style="text-align:center">
         <% if policy(@plant).edit? %>
-          <%= link_to "Edit this plant", edit_plant_path(@plant), class: "btn-flat btn-sm" %>
+          <%= link_to "Edit this plant", edit_plant_path(@plant), class: "backlink btn-flat" %>
         <% end %>
         <% if policy(@plant).destroy? %>
           <%= link_to "Remove this plant",
                         plant_path(@plant),
-                        class: "btn-flat",
+                        class: "backlink btn-flat",
                         method: :delete,
                         data: { confirm: "think twice..."} %></p>
         <% end %>
         <% if current_user != @plant.user || current_user.admin %>
-          <%= link_to "Book this plant", new_plant_booking_path(@plant), class: "btn-flat", method: :get %>
+          <%= link_to "Book this plant", new_plant_booking_path(@plant), class: "backlink btn-flat", method: :get %>
         <% end %>
-        <%= link_to "Back to all plants", plants_path, class: "btn-flat" %></p>
+        <%= link_to "Back to all plants", plants_path, class: "backlink btn-flat" %></p>
       </div>
     </div>
   </div>

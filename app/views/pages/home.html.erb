@@ -1,6 +1,6 @@
   <div class="banner_container">
     <div class="text_banner">
-      <h1 style="line-height: 38px">Find the perfect plant</h1>
+      <h1>Find the perfect plant</h1>
       <h1><em>near you</em></h1>
       <p>Bring your space to life with leafy greens</p>
     <div class="seach-form">
@@ -10,7 +10,7 @@
           class: "form-control",
           placeholder: "Find plants near you"
         %>
-        <%= submit_tag "Search", class: "btn btn-form" %>
+        <%= submit_tag "Search", class: "search_btn btn btn-form" %>
       <% end %>
     </div>
 
@@ -21,7 +21,7 @@
       </div>
 
       <div class="image_banner">
-        <%= image_tag("/assets/banner.jpg", width: 800, height: 800, crop: :fill)%>
+        <%= image_tag("/assets/banner.jpg", class: "img_banner", height: 800)%>
       </div>
    </div>
 </div>
@@ -33,22 +33,17 @@
     <div class="card_collection">
       <%= image_tag("/assets/beginner.jpg",
         width: 320, height: 420, crop: :fill) %>
-      <%= link_to "Best for Beginners", easy_plants_path %>
+      <p><%= link_to "Best for Beginners", easy_plants_path %></p>
     </div>
     <div class="card_collection">
       <%= image_tag("/assets/nearyou.jpg",
           width: 320, height: 420, crop: :fill) %>
-      <%= link_to "Near you", near_plants_path %>
+      <p><%= link_to "Near you", near_plants_path %></p>
     </div>
     <div class="card_collection">
       <%= image_tag("/assets/cheaper.jpg",
           width: 320, height: 420, crop: :fill) %>
-      <%= link_to "Cheaper", cheaper_plants_path %>
-    </div>
-    <div class="card_collection">
-      <%= image_tag("/assets/soil.jpg",
-          width: 320, height: 420, crop: :fill) %>
-      <p>Type</p>
+      <p><%= link_to "Cheaper", cheaper_plants_path %></p>
     </div>
   </div>
 </div>
