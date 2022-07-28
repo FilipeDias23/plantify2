@@ -3,17 +3,18 @@
       <h1 style="line-height: 38px">Find the perfect plant</h1>
       <h1><em>near you</em></h1>
       <p>Bring your space to life with leafy greens</p>
-
-      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" placeholder="location.." style="font-style:italic" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="search_btn btn btn-flat">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
+    <div class="seach-form">
+      <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find plants near you"
+        %>
+        <%= submit_tag "Search", class: "btn btn-form" %>
       <% end %>
+    </div>
 
-      <div class="btn">
+      <div>
         <%= link_to "Shop all Plants", "/plants", class: "banner_btn btn btn-flat" %>
         <%= link_to "Create a Plant", "plants/new", class: "banner_btn btn btn-flat" %>
       </div>
