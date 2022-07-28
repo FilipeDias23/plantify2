@@ -4,7 +4,7 @@
       <h1><em>near you</em></h1>
       <p>Bring your space to life with leafy greens</p>
     <div class="seach-form">
-      <%= form_tag root_path, method: :get do %>
+      <%= form_tag plants_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
