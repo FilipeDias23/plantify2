@@ -1,0 +1,29 @@
+.backlink {
+  // flex-grow: 1;
+  // margin: 0px 22px;
+  // background-color: #87A878;
+  // padding: 8px;
+  // border-radius: 4px;
+  color: white;
+  padding: 9px 4px;
+  border-radius: 4px;
+  background: #00ab5b;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline;
+  margin: 4px;
+  flex-grow: 1
+}
+
+.btn-group {
+display: flex;
+padding: 10px;
+justify-content: space-between;
+}
+
+.btn-group a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+}
