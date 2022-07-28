@@ -31,19 +31,19 @@
 
       <div class="btn-group btn-group-sm" style="text-align:center">
         <% if policy(@plant).edit? %>
-          <%= link_to "Edit this plant", edit_plant_path(@plant), class: "btn-flat btn-sm" %>
+          <%= link_to "Edit this plant", edit_plant_path(@plant), class: "backlink btn-flat" %>
         <% end %>
         <% if policy(@plant).destroy? %>
           <%= link_to "Remove this plant",
                         plant_path(@plant),
-                        class: "btn-flat",
+                        class: "backlink btn-flat",
                         method: :delete,
                         data: { confirm: "think twice..."} %></p>
         <% end %>
         <% if current_user != @plant.user || current_user.admin %>
-          <%= link_to "Book this plant", new_plant_booking_path(@plant), class: "btn-flat", method: :get %>
+          <%= link_to "Book this plant", new_plant_booking_path(@plant), class: "backlink btn-flat", method: :get %>
         <% end %>
-        <%= link_to "Back to all plants", plants_path, class: "btn-flat" %></p>
+        <%= link_to "Back to all plants", plants_path, class: "backlink btn-flat" %></p>
       </div>
     </div>
   </div>
