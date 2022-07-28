@@ -13,7 +13,7 @@
 
     <div class="card" style="width:100%">
       <div class="card-header">
-          <strong><%= @plant.description %></strong>
+          <strong><%= @plant.name.titleize %></strong>
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
@@ -21,6 +21,7 @@
           <li class="list-group-item"><strong>Price:</strong> <%= @plant.price %>€</li>
           <li class="list-group-item"><strong>Care Level:</strong> <%= @plant.care_level %></li>
           <li class="list-group-item"><strong>Location:</strong> <%= @plant.location.titleize %></li>
+          <li class="list-group-item"><strong>Description:</strong> <%= @plant.description.capitalize %></li>
         </ul>
       </div>
     </div>
