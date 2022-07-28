@@ -1,7 +1,7 @@
 .footer {
-  background: $color-lightblue;
+  background: #1B2F33;
   text-align: center;
-  color: rgba(0, 0, 0, 0.4);
+  color: $color-darkblue;
   margin-top: 35px;
 }
 
@@ -14,7 +14,7 @@
   margin: 5px;
   p {
     margin: 0;
-    color: $color-logo-grey;
+    color: #87A878;
     font-size: 18px;
   }
 }
@@ -30,7 +30,7 @@
 
 .footer-copyright a {
   text-decoration: none;
-  color: $color-darkblue;
+  color:#87A878;
   &:hover {
     color: $color-grey;
   }

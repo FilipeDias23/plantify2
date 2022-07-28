@@ -1,7 +1,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: $color-lightblue;
+  background: #1B2F33;
   margin-top: 0;
   // margin-bottom: 35px;
 }
@@ -42,12 +42,13 @@
   font-family: 'Megrim', cursive;
   font-size: 48px;
   margin-bottom: 0;
-  color: $color-logo-grey;
+  color: #87A878;
   letter-spacing: -0.1em;
   transform: scaleY(1.2);
   // text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
+  font-weight: bold;
 }
 
 #logo {
