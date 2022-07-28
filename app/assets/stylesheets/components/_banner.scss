@@ -3,7 +3,7 @@
   display: flex;
   gap: 50px;
   padding-left: 120px;
-  }
+}
 
 .text_banner h1 {
   font-size: 70px;
@@ -72,12 +72,29 @@
 }
 
 .btn-form {
-    padding: 15px 30px;
-    gap: 10px;
-    margin: 20px;
-    border-radius: 4px;
-    display: block;
-    justify-content: center;
-    background-color: #2E78BD;
-    color:white;
+  padding: 15px 30px;
+  gap: 10px;
+  margin: 20px;
+  border-radius: 4px;
+  display: block;
+  justify-content: center;
+  background-color: #2E78BD;
+  color:white;
+}
+
+.search_btn {
+  position: relative;
+  bottom: 85px;
+  left: 278px;
+  background: #00ab5b;
+  color: white;
+}
+
+.search_btn:hover {
+  background: #133d1a;
+  color: white;
+}
+
+.form-control {
+  width: 418px;
 }
