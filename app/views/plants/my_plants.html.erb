@@ -1,7 +1,8 @@
+
 <div class="plants3">
   <div class="container">
     <ol style="list-style: none;">
-    <h3>Your Plants</h3>
+    <h2> <strong>Your Plants</strong> </h2>
     <% @plants.each do |plant| %>
       <li>
         <div class="card-product">
@@ -12,6 +13,7 @@
         <% else %>
           <p><em><%= "no image available" %></em></p>
         <% end %>
+
         <div class="card-product-infos">
         <h2><%= link_to plant.name, plant_path(plant.id), method: :get, style: "text-decoration: none" %></h2>
         <p>Description: <%= plant.description %></p>
@@ -21,4 +23,3 @@
       </ol>
     </div>
   </div>
-</div>
