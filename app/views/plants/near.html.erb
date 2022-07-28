@@ -17,7 +17,7 @@
         <h2><%= link_to plant.name, plant_path(plant.id), method: :get, style: "text-decoration: none" %></h2>
         <p>Type: <%= plant.plant_type %></p>
         <p>Price: <%= plant.price %>€ • Care Level: <%= plant.care_level %></p>
-        <p>Some km <strong>away from you</strong></p>
+        <p><strong><%= number_with_precision( plant.distance_to(current_user.location) , precision: 1) %>km away from you</strong></p>
       </div>
   <% end %>
   </ol>
