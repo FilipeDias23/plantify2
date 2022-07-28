@@ -41,3 +41,22 @@
 .card_plants h5 {
   text-align: center;
 }
+
+.bag {
+  padding: 7px;
+  border-color: #313232;
+  color: #313232;
+  box-shadow: none;
+  background-color:white;
+  font-weight: 800;
+}
+
+.bag:hover {
+  background-color: #313232;
+  color: white;
+  border-color: #313232;
+}
+
+.bag a:hover {
+  color: white;
+}
