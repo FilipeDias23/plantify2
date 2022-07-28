@@ -5,6 +5,6 @@
   <%= p.input :care_level, collection: 0..3, prompt: "Select plant's level of maintenance", selected: 0 %>
   <%= p.input :location %>
   <%= p.input :image, as: :file %>
-  <%= p.input :description, as: :text, :input_html => { :rows => 5 } %>
+  <%= p.input :description, as: :text, :input_html => { :rows => 3 } %>
   <%= p.submit %>
 <% end %>
