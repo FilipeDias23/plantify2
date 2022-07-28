@@ -1,6 +1,10 @@
 <%= simple_form_for @plant do |p| %>
   <%= p.input :name %>
-  <%= p.input :plant_type, as: :radio_buttons, collection: ['Cactus', 'Rose', 'Orchidea', 'Tree', 'Vegetable'] %>
+  <%= p.input :plant_type, as: :radio_buttons, collection: ['Cactus',
+                                                            'Rose',
+                                                            'Orchidea',
+                                                            'Tree',
+                                                            'Vegetable'] %>
   <%= p.input :price, as: :numeric %>
   <%= p.input :care_level, collection: 0..3, prompt: "Select plant's level of maintenance", selected: 0 %>
   <%= p.input :location %>
