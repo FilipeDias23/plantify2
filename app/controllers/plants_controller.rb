@@ -4,7 +4,11 @@ class PlantsController < ApplicationController
 
   def index
     # @plants = Plant.all
-    @plants = policy_scope(Plant)
+    if params[:query].present?
+      @plants = policy_scope(Plant).search_by_location(params[:query])
+    else
+      @plants = policy_scope(Plant)
+    end
   end
 
   def show; end
