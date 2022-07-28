@@ -47,13 +47,15 @@ evergreen = { name: "Evergreen",
            price: 27,
            user: fakeuser3 }
 
-[plantome, planthouse, bonita, evergreen].each do |plnt|
+10.times do
+  [plantome, planthouse, bonita, evergreen].each do |plnt|
   # url = plt[:image_url]
   # file = URI.open(url)
   plant = Plant.new(plnt)
   # plant.image_url.attach(io: file, filename: url[/\w+\.jpg\z/], content_type: 'image/png')
   plant.save!
   puts "Created #{plant.name}"
+end
 end
 puts "Finished!"
 
