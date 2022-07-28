@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="plants3">
   <div class="container">
 
@@ -6,7 +6,7 @@
     <h2> <strong>Your Plants</strong> </h2>
     <% @plants.each do |plant| %>
       <li>
-         <div class="card-product">
+        <div class="card-product">
           <% if plant.image.attached? %>
             <%= cl_image_tag plant.image.key %>
           <% elsif plant.image_url %>
@@ -19,28 +19,7 @@
         <p>Description: <%= plant.description %></p>
         <p>Created on <%= plant.created_at.to_date  %> in <%= plant.location  %>.</p>
         </div>
-      </div>
-=======
-<div class="container">
-  <ol style="list-style: none;">
-   <h3>Your Plants</h3>
-  <% @plants.each do |plant| %>
-    <li>
-      <div class="card-product">
-      <% if plant.image.attached? %>
-        <%= cl_image_tag plant.image.key %>
-      <% elsif plant.image_url %>
-        <%= image_tag plant.image_url, height: "240", width: "240" %>
-      <% else %>
-        <p><em><%= "no image available" %></em></p>
       <% end %>
-      <div class="card-product-infos">
-      <h2><%= link_to plant.name, plant_path(plant.id), method: :get, style: "text-decoration: none" %></h2>
-      <p>Description: <%= plant.description %></p>
-      <p>Created on <%= plant.created_at.to_date  %> in <%= plant.location  %>.</p>
->>>>>>> 6c2e04d66d85f8c37fb3a51b700dfadd72845a47
-    </div>
-    <% end %>
-    </ol>
-  </div>
-</div>
+          </ol>
+        </div>
+      </div>
