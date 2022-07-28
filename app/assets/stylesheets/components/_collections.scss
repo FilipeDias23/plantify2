@@ -14,15 +14,21 @@
 }
 
 .card_collection:hover {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.1);
 }
 
 .card_collection img {
   object-fit: cover;
 }
-.card_collection  p {
+.card_collection a {
   color: black;
-  background-color: white;
+  font-size: 20px;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  text-decoration: none;
+}
+
+.card_collection p {
+  color: black;
   text-align: center;
   font-size: 20px;
   font-family: sans-serif;
