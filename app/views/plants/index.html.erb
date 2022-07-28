@@ -50,6 +50,7 @@
 
       <div class="card_row">
         <% @plants.each do |plant| %>
+          <% if !plant.booking %>
           <div class="card_plants">
             <% if plant.image.attached? %>
               <%= cl_image_tag plant.image.key, height: "240", width: "240" %>
@@ -67,7 +68,8 @@
             <% if current_user != plant.user || current_user.admin %>
               <button class="bag" type="button"><%= link_to "Book", new_plant_booking_path(plant), method: :get %> </button>
             <% end %>
-            
+
+
             <%# if policy(plant).edit? %>
                 <%# link_to "Edit", edit_plant_path(plant), style: "text-decoration: none" %>
             <%# end %>
@@ -79,8 +81,9 @@
                           data: { confirm: "think twice..."} %>
              <%# end %>
           </div>
+          <% end %>
         <% end %>
-        
+
       </div>
     </div>
   </div>

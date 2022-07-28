@@ -6,6 +6,7 @@
    <h2 style="color: white">Your Confirmed Bookings:</h3>
   <% @bookings.each do |booking| %>
     <li>
+    <%# <% raise %> %>
       <div class="card-product">
       <% if booking.plant.image.attached? %>
         <%= cl_image_tag booking.plant.image.key, class: "booking_img" %>
