@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :plants, dependent: :destroy
   validates_presence_of :first_name, :last_name, :username
-  # , :profile_pic
   has_one_attached :profile_pic, dependent: :destroy
+
+  # Geocoder
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end

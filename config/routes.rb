@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :plants do
     resources :bookings, only: [ :index, :show, :new, :create ]
     collection do
-      get :easy
+      get :easy, :near
     end
   end
   resources :bookings, only: [:destroy]

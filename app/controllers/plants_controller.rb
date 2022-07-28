@@ -44,8 +44,14 @@ class PlantsController < ApplicationController
     authorize @plants
   end
 
+  # Collections
   def easy
     @plants = Plant.where(care_level: 0)
+    authorize @plants
+  end
+
+  def near
+    @plants = Plant.near(current_user.location)
     authorize @plants
   end
 

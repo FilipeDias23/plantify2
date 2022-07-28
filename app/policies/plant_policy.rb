@@ -30,4 +30,8 @@ class PlantPolicy < ApplicationPolicy
   def easy?
     true
   end
+
+  def near?
+    true
+  end
 end
