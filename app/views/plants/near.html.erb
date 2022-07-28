@@ -1,6 +1,6 @@
 <div class="container">
   <ol style="list-style: none;">
-   <h3>Your Plants</h3>
+   <h3>Near <%= current_user.location %></h3>
   <% @plants.each do |plant| %>
     <li>
       <div class="card-product">
