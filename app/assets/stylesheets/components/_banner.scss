@@ -46,7 +46,7 @@
 
 .banner_btn {
   color: white;
-  padding: 9px 4px;
+  padding: 15px 30px;
   border-radius: 4px;
   background: #00ab5b;
   transition: background 0.3s ease;
@@ -66,4 +66,15 @@
   justify-content: center;
   flex-direction: column;
   width: 200px;
+}
+
+.btn-form {
+    padding: 15px 30px;
+    gap: 10px;
+    margin: 20px;
+    border-radius: 4px;
+    display: block;
+    justify-content: center;
+    background-color: #2E78BD;
+    color:white;
 }
