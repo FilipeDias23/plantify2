@@ -3,7 +3,7 @@
       <h1>Find the perfect plant</h1>
       <h1><em>near you</em></h1>
       <p>Bring your space to life with leafy greens</p>
-    <div class="seach-form">
+    <div class="seach-form" style="position: relative; margin: 50px;">
       <%= form_tag plants_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
