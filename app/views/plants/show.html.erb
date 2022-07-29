@@ -30,9 +30,13 @@
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
-          <% @bookings = Booking.where(user: @plant.booking.user_id) %>
-          <% @bookings.each do |booking| %>
-            <li class="list-group-item">"<em><%= booking.message  %></em>", <%= booking.user.first_name  %> <%= booking.user.last_name  %></li>
+          <% @bookings = Booking.where(plant_id: @plant.id) %>
+          <% if @bookings %>
+            <p>No one has booked <%= @plant.name.titleize %>...</p>
+          <% else %>
+            <% @bookings.each do |booking| %>
+              <li class="list-group-item">"<em><%= booking.message  %></em>", <%= booking.user.first_name  %> <%= booking.user.last_name  %></li>
+            <% end %>
           <% end %>
         </ul>
       </div>
