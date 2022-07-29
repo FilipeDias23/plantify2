@@ -34,8 +34,8 @@ puts "Creating plants..."
           { name: "Bonita",
             plant_type: "Orchidea",
             description: "Unique kind of vegetable",
-            image_url: "https://res.cloudinary.com/dukzi3epq/image/upload/v1/production/3l0jnw1mvqq890lqd3n85qxlu1ho",
-            care_level: 2,
+            image_url: "/assets/seeds/plant_3.jpg",
+            care_level: 3,
             location: "Lisbon, Portugal",
             price: 199,
             user: fakeuser2 },
@@ -54,10 +54,34 @@ puts "Creating plants..."
             care_level: 3,
             location: "Berlin, Germany",
             price: 31,
-            user: admin }
+            user: admin },
+          { name: "Blue Moon",
+            plant_type: "Cactus",
+            description: "You won't even see it under clear blue sky! And it is super easy to handle! You will love it!",
+            image_url: "/assets/seeds/plant_2.jpg",
+            care_level: 0,
+            location: "Munich, Germany",
+            price: 75,
+            user: fakeuser2 },
+          { name: "Red Velvet",
+            plant_type: "Tree",
+            description: "Natural leaf color",
+            image_url: "/assets/seeds/plant_4.jpg",
+            care_level: 2,
+            location: "Madrid, Spain",
+            price: 7,
+            user: fakeuser2 },
+          { name: "Gherkino",
+            plant_type: "Vegetable",
+            description: "Don't eat it!",
+            image_url: "/assets/seeds/plant_5.jpg",
+            care_level: 3,
+            location: "Berlin, Germany",
+            price: 68,
+            user: fakeuser3 }
 ]
 
-8.times do
+5.times do
   @plants.each do |plnt|
   # url = plt[:image_url]
   # file = URI.open(url)
