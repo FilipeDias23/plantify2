@@ -21,7 +21,7 @@
             <p><strong><%= number_with_precision( plant.distance_to(current_user.location) , precision: 1) %>km away from you</strong></p>
           </div>
       <% end %>
-
+      
     <% else %>
       <div class="seach-form" style="position: relative; margin: 50px;">
       <%= form_tag plants_path, method: :get do %>
