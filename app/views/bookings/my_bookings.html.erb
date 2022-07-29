@@ -9,9 +9,9 @@
     <%# <% raise %> %>
       <div class="card-product">
       <% if booking.plant.image.attached? %>
-        <%= cl_image_tag booking.plant.image.key, class: "booking_img" %>
+        <%= link_to (cl_image_tag booking.plant.image.key, width: "100%", class: "booking_img"), plant_path(booking.plant) %>
       <% elsif booking.plant.image_url %>
-        <%= image_tag booking.plant.image_url, width: "100%", class: "plant-show" %>
+        <%= link_to (image_tag booking.plant.image_url, width: "100%", class: "plant-show"), plant_path(booking.plant) %>
       <% else %>
         <p><em><%= "no image available" %></em></p>
       <% end %>
