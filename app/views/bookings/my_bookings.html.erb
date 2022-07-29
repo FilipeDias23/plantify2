@@ -6,7 +6,6 @@
    <h2 style="color:white; text-align:center; margin-top: 15px;"><strong>Your Bookings:</strong></h3>
   <% @bookings.each do |booking| %>
     <li>
-    <%# <% raise %> %>
       <div class="card-product">
       <% if booking.plant.image.attached? %>
         <%= link_to (cl_image_tag booking.plant.image.key, width: "100%", class: "booking_img"), plant_path(booking.plant) %>

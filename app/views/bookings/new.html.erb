@@ -1,20 +1,11 @@
-<div class="container">
-  <div class="container-body">
-      <h2 style="color:black; text-align:center; margin: 15px 0px;"><%= @plant.name %></h2>
-      <% if @plant.image.attached? %>
-        <%= cl_image_tag @plant.image.key, width: "300px" %>
-      <% elsif @plant.image_url %>
-        <%= image_tag @plant.image_url, width: "100%", class: "plant-show" %>
-      <% else %>
-        <p><em><%= "no image available" %></em></p>
-      <% end %>
-
-      <h3>Create a new booking for <%= @plant.name %><h3>
-      <h4>Don't forget to messge the seller any special details or requests.</h4>
-      <%= simple_form_for [ @plant, @booking ] do |f| %>
-        <%= f.input :message %>
-        <%= f.submit "Book now!", class: "btn btn-primary" %>
-      <% end %>
+<div class="container" style="width:600px">
+  <h2>Book <%= @plant.name %> for <%= @plant.price %>€</h2>
+  <%= simple_form_for [ @plant, @booking ] do |f| %>
+    <div class="form-inputs">
+      <%= f.input :message, label: "Message your special requests" %>
     </div>
-
+    <div class="form-actions">
+      <%= f.submit "Book now!", class: "banner_btn btn btn-flat" %>
+    </div>
+  <% end %>
 </div>
