@@ -55,7 +55,11 @@ class PlantsController < ApplicationController
   end
 
   def near
+    if current_user
     @plants = Plant.near(current_user.location)
+    else
+    @plants = Plant.where(params[:query])
+    end
     authorize @plants
   end
 
