@@ -89,7 +89,7 @@ puts "Creating plants..."
   # plant.image_url.attach(io: file, filename: url[/\w+\.jpg\z/], content_type: 'image/png')
   plant.save!
   puts "Created #{plant.name}"
-end
+  end
 end
 puts "Finished!"
 
