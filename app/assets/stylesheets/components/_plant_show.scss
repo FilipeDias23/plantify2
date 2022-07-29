@@ -5,19 +5,21 @@
   // padding: 8px;
   // border-radius: 4px;
   color: white;
-  padding: 9px 4px;
+  padding: 9px 10px;
   border-radius: 4px;
   background: #00ab5b;
   transition: background 0.3s ease;
   text-decoration: none;
   display: inline;
   margin: 4px;
-  flex-grow: 1
+  flex-grow: 1;
+  margin: 0;
 }
 
 .btn-group {
 display: flex;
-padding: 10px;
+padding: 10px 0;
+gap: 10px;
 justify-content: space-between;
 }
 

@@ -38,12 +38,12 @@
                         plant_path(@plant),
                         class: "backlink btn-flat",
                         method: :delete,
-                        data: { confirm: "think twice..."} %></p>
+                        data: { confirm: "think twice..."} %>
         <% end %>
         <% if current_user != @plant.user || current_user.admin %>
           <%= link_to "Book this plant", new_plant_booking_path(@plant), class: "backlink btn-flat", method: :get %>
         <% end %>
-        <%= link_to "Back to all plants", plants_path, class: "backlink btn-flat" %></p>
+        <%= link_to "Back to all plants", plants_path, class: "backlink btn-flat" %>
       </div>
     </div>
   </div>
