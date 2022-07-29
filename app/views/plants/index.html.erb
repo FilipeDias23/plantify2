@@ -10,9 +10,9 @@
           <% if !plant.booking %>
           <div class="card_plants">
             <% if plant.image.attached? %>
-              <%= cl_image_tag plant.image.key, height: "240", width: "240" %>
+              <%= link_to (cl_image_tag plant.image.key, height: "240", width: "240"), plant_path(plant) %>
             <% elsif plant.image_url %>
-              <%= image_tag plant.image_url, height: "240", width: "240" %>
+              <%= link_to (image_tag plant.image_url, height: "240", width: "240"), plant_path(plant)  %>
             <% else %>
               <p><em><%= "no image available" %></em></p>
             <% end %>
