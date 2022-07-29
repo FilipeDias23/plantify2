@@ -3,9 +3,8 @@
   background: #1B2F33;
   text-align: center;
   color: $color-darkblue;
-  position: fixed;
-  bottom: 0;
-  z-index: 1;
+  position: absolute;
+  width: 100%;
 }
 
 .footer-links {
@@ -42,5 +41,6 @@
 }
 
 body {
-  margin-bottom: 122px;
+  position: relative;
+  min-height: 100vh;
  }
