@@ -1,13 +1,15 @@
 .footer {
+  width: 100vw;
   background: #1B2F33;
   text-align: center;
   color: $color-darkblue;
-  margin-top: 35px;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
 }
 
 .footer-links {
   display: inline-flex;
-  padding-top: 40px;
 }
 
 .social-media-link {
@@ -15,7 +17,7 @@
   p {
     margin: 0;
     color: #87A878;
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
@@ -28,9 +30,12 @@
   }
 }
 
-.footer-copyright a {
+.footer-copyright {
+  font-size: 14px;
+  a {
   text-decoration: none;
   color:#87A878;
+  }
   &:hover {
     color: $color-grey;
   }
