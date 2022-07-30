@@ -16,10 +16,15 @@
             <% else %>
               <p><em><%= "no image available" %></em></p>
             <% end %>
-
+            <div class="plant-card-info">
+            <div class="plant-card-text">
             <h3><strong><%= link_to plant.name, plant_path(plant) %></strong></h3>
             <p><%= plant.plant_type %></p>
+            </div>
+            <div class="plant-card-price">
             <h5><%= plant.price %>€</h5>
+            </div>
+            </div>
 
             <%# Links with authorization, depending on who created the plant (still to be styled) %>
             <% if current_user != plant.user || current_user.admin %>
