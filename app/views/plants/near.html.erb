@@ -1,10 +1,12 @@
 <div class="container">
   <ol style="list-style: none;">
-    <h2>Near Yourself</h2>
-    <% if current_user %>
-      <p>Around <%= current_user.location %></p>
-      <% @plants.each do |plant| %>
-        <li>
+    <div class="near_text">
+      <h2>Near Yourself</h2>
+        <% if current_user %>
+          <p>Around <%= current_user.location %></p>
+      </div>
+          <% @plants.each do |plant| %>
+            <li>
           <div class="card-product">
           <% if plant.image.attached? %>
             <%= link_to (cl_image_tag plant.image.key, height: "240", width: "240"), plant_path(plant) %>
@@ -21,7 +23,7 @@
             <p><strong><%= number_with_precision( plant.distance_to(current_user.location) , precision: 1) %>km away from you</strong></p>
           </div>
       <% end %>
-      
+
     <% else %>
       <div class="seach-form" style="position: relative; margin: 50px;">
       <%= form_tag plants_path, method: :get do %>
