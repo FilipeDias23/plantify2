@@ -4,7 +4,7 @@
 
     <div class="card mt-3" style="width:100%">
         <% if @plant.image.attached? %>
-          <%= cl_image_tag @plant.image.key, width: "100%", class: "plant-show" %>
+          <%= cl_image_tag @plant.image.key, width:"100%", class: "plant-show" %>
         <% elsif @plant.image_url %>
           <%= image_tag @plant.image_url, width: "100%", class: "plant-show" %>
         <% else %>
