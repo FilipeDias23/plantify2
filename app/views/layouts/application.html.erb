@@ -20,8 +20,10 @@
 
   <body>
     <div class="page-container">
+      <p class="alert"><%= alert %></p>
       <%= render "shared/navbar" %>
-      <%= render 'shared/flashes' %>
+      <p class="notice"><%= notice %></p>
+      <%# <%= render 'shared/flashes' %> %>
       <main id="main-content">
         <%= yield %>
       </main>
