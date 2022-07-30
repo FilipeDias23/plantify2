@@ -1,19 +1,18 @@
 <div class="plants4">
   <div class="container" style="width:600px">
-  <h2 style="color:white; text-align:center; margin-top: 15px;">Book <%= @plant.name.titleize %></h2>
-    <div style="width:200px;">
-      <% if @plant.image.attached? %>
-        <%= cl_image_tag @plant.image.key, width: "100%", class: "plant-show" %>
-      <% elsif @plant.image_url %>
-        <%= image_tag @plant.image_url, width: "100%", class: "plant-show" %>
-      <% else %>
-        <p><em><%= "no image available" %></em></p>
-      <% end %>
-    </div>
+  <h2 style="color:white; text-align:center; margin-top: 15px; text-shadow:1px 1px 2px #1C2E32">Book <%= @plant.name.titleize %></h2>
 
     <div class="card mt-3" style="width:100%">
+        <% if @plant.image.attached? %>
+          <%= cl_image_tag @plant.image.key, width: "100%", class: "plant-show" %>
+        <% elsif @plant.image_url %>
+          <%= image_tag @plant.image_url, width: "100%", class: "plant-show" %>
+        <% else %>
+          <p><em><%= "no image available" %></em></p>
+        <% end %>
       <div class="card-header">
-          Review your next plant
+        <strong>Review your booking:</strong>
+
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
@@ -26,7 +25,7 @@
         <hr>
         <%= simple_form_for [ @plant, @booking ] do |f| %>
         <div class="form-inputs mt-3">
-          <%= f.input :message, label: "Leave a message:" %>
+          <%= f.input :message, label: "Leave a message:", style: "width:100%" %>
         </div>
         <div class="form-actions">
           <%= f.submit "Book now!", class: "banner_btn btn btn-flat" %>
