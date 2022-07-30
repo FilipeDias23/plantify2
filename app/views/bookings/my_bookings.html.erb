@@ -1,26 +1,26 @@
 <div class="plants">
-<div class="container">
+  <div class="container">
 
-  <ol style="list-style: none;">
+    <ol style="list-style: none;">
 
-   <h2 style="color:white; text-align:center; margin-top: 15px;"><strong>Your Bookings:</strong></h3>
-  <% @bookings.each do |booking| %>
-    <li>
-      <div class="card-product">
-      <% if booking.plant.image.attached? %>
-        <%= link_to (cl_image_tag booking.plant.image.key, width: "100%", class: "booking_img"), plant_path(booking.plant) %>
-      <% elsif booking.plant.image_url %>
-        <%= link_to (image_tag booking.plant.image_url, width: "100%", class: "plant-show"), plant_path(booking.plant) %>
-      <% else %>
-        <p><em><%= "no image available" %></em></p>
-      <% end %>
-      <div class="card-product-infos">
-      <h2><%= link_to booking.plant.name, plant_path(booking.plant.id), method: :get, style: "text-decoration: none" %></h2>
-      <p>Description: <%= booking.plant.description %></p>
-      <p>Booked on <%= booking.created_at.to_date  %> in <%= booking.plant.location  %>.</p>
+    <h2 style="color:white; text-align:center; margin-top: 15px;"><strong>Your Bookings:</strong></h3>
+    <% @bookings.each do |booking| %>
+      <li>
+        <div class="card-product">
+        <% if booking.plant.image.attached? %>
+          <%= link_to (cl_image_tag booking.plant.image.key, width: "100%", class: "booking_img"), plant_path(booking.plant) %>
+        <% elsif booking.plant.image_url %>
+          <%= link_to (image_tag booking.plant.image_url, width: "100%", class: "plant-show"), plant_path(booking.plant) %>
+        <% else %>
+          <p><em><%= "no image available" %></em></p>
+        <% end %>
+        <div class="card-product-infos">
+        <h2><%= link_to booking.plant.name, plant_path(booking.plant.id), method: :get, style: "text-decoration: none" %></h2>
+        <p>Description: <%= booking.plant.description %></p>
+        <p>Booked on <%= booking.created_at.to_date  %> in <%= booking.plant.location  %>.</p>
+      </div>
     </div>
+    <% end %>
+    </ol>
   </div>
-  <% end %>
-  </ol>
-</div>
 </div>
