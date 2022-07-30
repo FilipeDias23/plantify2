@@ -1,19 +1,17 @@
 <div class="plants2">
   <div class="container" style="width:600px";>
-      <h2 class="plant-header"><strong><%= @plant.name.titleize %></strong></h2>
-      <% if @plant.image.attached? %>
-        <%= cl_image_tag @plant.image.key, width: "100%", class: "plant-show" %>
-      <% elsif @plant.image_url %>
-        <%= image_tag @plant.image_url, width: "100%", class: "plant-show" %>
-      <% else %>
-        <p><em><%= "no image available" %></em></p>
-      <% end %>
-
-
+    <h2 class="plant-header"><strong><%= @plant.name.titleize %></strong></h2>
+    <% if @plant.image.attached? %>
+      <%= cl_image_tag @plant.image.key, width: "100%", class: "plant-show" %>
+    <% elsif @plant.image_url %>
+      <%= image_tag @plant.image_url, width: "100%", class: "plant-show" %>
+    <% else %>
+      <p><em><%= "no image available" %></em></p>
+    <% end %>
 
     <div class="card" style="width:100%">
       <div class="card-header">
-          <strong><%= @plant.name.titleize %></strong>
+          This is <%= @plant.name.titleize %>:
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
@@ -26,10 +24,25 @@
       </div>
     </div>
 
+    <div class="card mt-3" style="width:100%">
+      <div class="card-header">
+          What bookers say about <%= @plant.name.titleize %>:
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <% @bookings = Booking.where(plant_id: @plant.id) %>
+          <% if @bookings.empty? %>
+            <p>No one has booked <%= @plant.name.titleize %>...</p>
+          <% else %>
+            <% @bookings.each do |booking| %>
+              <li class="list-group-item"><em>"<%= booking.message %>"</em>, <%= booking.user.first_name  %> <%= booking.user.last_name  %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
 
-
-
-      <div class="btn-group btn-group-sm" style="text-align:center">
+    <div class="btn-group btn-group-sm" style="text-align:center">
         <% if policy(@plant).edit? %>
           <%= link_to "Edit this plant", edit_plant_path(@plant), class: "backlink btn-flat" %>
         <% end %>
@@ -44,7 +57,6 @@
           <%= link_to "Book this plant", new_plant_booking_path(@plant), class: "backlink btn-flat", method: :get %>
         <% end %>
         <%= link_to "Back to all plants", plants_path, class: "backlink btn-flat" %>
-      </div>
     </div>
   </div>
 </div>
