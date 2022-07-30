@@ -5,7 +5,7 @@
   </div>
   <% @plants.each do |plant| %>
     <li>
-      <div class="card-product">
+      <div class="my-card">
       <% if plant.image.attached? %>
         <%= link_to (cl_image_tag plant.image.key, height: "240", width: "240"), plant_path(plant) %>
       <% elsif plant.image_url %>
