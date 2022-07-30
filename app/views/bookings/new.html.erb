@@ -1,14 +1,22 @@
 <div class="container" style="width:600px">
-  <h2>Book  for <%= @plant.price %>€</h2>
+  <h2>Book <%= @plant.name.titleize %></h2>
 
   <div class="card mt-3" style="width:100%">
     <div class="card-header">
-        About <%= @plant.name.titleize %>:
+        Review your next plant
     </div>
     <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Type:</strong> <%= @plant.plant_type.capitalize %></li>
+        <li class="list-group-item"><strong>Price:</strong> <%= @plant.price %>€</li>
+        <li class="list-group-item"><strong>Care Level:</strong> <%= @plant.care_level %></li>
+        <li class="list-group-item"><strong>Location:</strong> <%= @plant.location.titleize %></li>
+        <li class="list-group-item"><strong>Description:</strong> <%= @plant.description.capitalize %></li>
+      </ul>
+      <hr>
       <%= simple_form_for [ @plant, @booking ] do |f| %>
-      <div class="form-inputs">
-        <%= f.input :message, label: "Message your special requests" %>
+      <div class="form-inputs mt-3">
+        <%= f.input :message, label: "Leave a message:" %>
       </div>
       <div class="form-actions">
         <%= f.submit "Book now!", class: "banner_btn btn btn-flat" %>
