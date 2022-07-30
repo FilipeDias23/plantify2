@@ -21,7 +21,7 @@
       </div>
 
       <div class="image_banner">
-        <%= image_tag("/assets/banner.jpg", class: "img_banner", height: 800)%>
+        <%= image_tag("banner.jpg", class: "img_banner", height: 800)%>
       </div>
    </div>
 </div>
@@ -31,17 +31,17 @@
 
   <div class="cards">
     <div class="card_collection">
-      <%= link_to image_tag("/assets/beginner.jpg",
+      <%= link_to image_tag("beginner.jpg",
         width: 320, height: 420, crop: :fill), easy_plants_path %>
       <p><%= link_to "Best for Beginners", easy_plants_path %></p>
     </div>
     <div class="card_collection">
-      <%= link_to image_tag("/assets/nearyou.jpg",
+      <%= link_to image_tag("nearyou.jpg",
           width: 320, height: 420, crop: :fill), near_plants_path %>
       <p><%= link_to "Near you", near_plants_path %></p>
     </div>
     <div class="card_collection">
-      <%= link_to image_tag("/assets/cheaper.jpg",
+      <%= link_to image_tag("cheaper.jpg",
           width: 320, height: 420, crop: :fill), cheaper_plants_path %>
       <p><%= link_to "Cheaper", cheaper_plants_path %></p>
     </div>
