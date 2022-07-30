@@ -16,5 +16,4 @@ class Plant < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
 end
