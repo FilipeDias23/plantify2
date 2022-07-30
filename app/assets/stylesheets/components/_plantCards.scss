@@ -9,29 +9,37 @@
 .card_plants {
   display: grid;
   grid-gap: 16px;
+  max-width: 240px;
   border: 0.0625rem solid #dedede;
   font-family: 'Ibarra Real Nova', serif;
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .card_plants a {
   color: #313232;
   text-decoration: none;
   font-weight: 800;
+  text-align: left;
 }
 
 .card_plants img {
   object-fit: cover;
 }
 .card_plants p {
-  text-align: center;
+  // text-align: center;
   text-transform: uppercase;
   font-weight: 400;
   font-size: .75rem;
   font-family:Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 .card_plants h3 {
   text-align: center;
+  margin: 0;
+  font-size: 22px;
 }
 
 .card_plants a {
@@ -41,6 +49,9 @@
 
 .card_plants h5 {
   text-align: center;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bolder;
 }
 
 #bag {
@@ -59,4 +70,19 @@
 
 #bag:hover {
   background-color: #133d1a;
+}
+
+.plant-card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 5px;
+}
+
+.plant-card-text {
+  padding: 5px;
+  text-align: left;
+}
+.plant-card-price {
+  padding: 5px;
 }
