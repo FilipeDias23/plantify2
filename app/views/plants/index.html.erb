@@ -23,7 +23,7 @@
 
             <%# Links with authorization, depending on who created the plant (still to be styled) %>
             <% if current_user != plant.user || current_user.admin %>
-              <button class="bag" type="button"><%= link_to "Book", new_plant_booking_path(plant), method: :get %> </button>
+              <%= link_to "Book", new_plant_booking_path(plant), id: "bag", method: :get %> </button>
             <% end %>
 
             <%# if policy(plant).edit? %>

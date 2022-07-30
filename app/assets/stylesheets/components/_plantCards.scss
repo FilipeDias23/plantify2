@@ -43,15 +43,20 @@
   text-align: center;
 }
 
-.bag {
+#bag {
   padding: 7px;
   border-color: #313232;
-  color: #313232;
+  color: #ffffff;
   box-shadow: none;
-  background-color:#bee0bb;
+  background-color: #00ab5b;;
   font-weight: 800;
+  text-align: center;
+  font-family: "Work-Sans", "Helvetica", "sans-serif";
+  font-size: 16px;
+  font-weight: 100;
+  border-radius: 4px;
 }
 
-.bag:hover {
-  background-color: #84bc8e;
+#bag:hover {
+  background-color: #133d1a;
 }
