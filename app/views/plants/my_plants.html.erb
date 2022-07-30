@@ -1,11 +1,9 @@
 
 <div class="plants3">
   <div class="container">
-    <ol style="list-style: none;">
-    <h2 style="color:white; text-align:center; margin-top: 15px;"> <strong>Your Plants:</strong> </h2>
+    <h2 style="color:white; text-align:center; margin-top: 15px;"> <strong>My Plants:</strong> </h2>
     <% @plants.each do |plant| %>
-      <li>
-        <div class="card-product">
+        <div class="my-card">
         <% if plant.image.attached? %>
           <%= link_to (cl_image_tag plant.image.key, height: "240", width: "240"), plant_path(plant) %>
         <% elsif plant.image_url %>
@@ -15,12 +13,12 @@
         <% end %>
 
         <div class="card-product-infos">
-        <h2><%= link_to plant.name, plant_path(plant.id), method: :get, style: "text-decoration: none" %></h2>
-        <p>Type: <%= plant.plant_type %></p>
-        <p>Price: <%= plant.price %>€</p>
-        <p>Created in <%= plant.location  %></p>
+        <h2><%= link_to plant.name.titleize, plant_path(plant.id), method: :get, style: "text-decoration: none" %></h2>
+        <p><strong>Type:</strong> <%= plant.plant_type %></p>
+        <p><strong>Price:</strong> <%= plant.price %>€</p>
+        <p>Grown in <strong><%= plant.location  %></strong>.</p>
+      </div>
       </div>
       <% end %>
-      </ol>
     </div>
   </div>

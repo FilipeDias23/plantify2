@@ -1,12 +1,9 @@
 <div class="plants">
   <div class="container">
 
-    <ol style="list-style: none;">
-
-    <h2 style="color:white; text-align:center; margin-top: 15px;"><strong>Your Bookings:</strong></h3>
+    <h2 style="color:white; text-align:center; margin-top: 15px;"><strong>My Bookings:</strong></h3>
     <% @bookings.each do |booking| %>
-      <li>
-        <div class="card-product">
+        <div class="my-card">
         <% if booking.plant.image.attached? %>
           <%= link_to (cl_image_tag booking.plant.image.key, width: "100%", class: "booking_img"), plant_path(booking.plant) %>
         <% elsif booking.plant.image_url %>
@@ -16,11 +13,10 @@
         <% end %>
         <div class="card-product-infos">
         <h2><%= link_to booking.plant.name, plant_path(booking.plant.id), method: :get, style: "text-decoration: none" %></h2>
-        <p>Description: <%= booking.plant.description %></p>
-        <p>Booked on <%= booking.created_at.to_date  %> in <%= booking.plant.location  %>.</p>
+        <p><strong>Description:</strong> <%= booking.plant.description %></p>
+        <p>Booked on <strong><%= booking.created_at.to_date  %></strong> in <strong><%= booking.plant.location  %></strong>.</p>
       </div>
     </div>
     <% end %>
-    </ol>
   </div>
 </div>
