@@ -12,7 +12,7 @@ class Plant < ApplicationRecord
   #PG Search
   include PgSearch::Model
   pg_search_scope :search_by_location,
-    against: [ :location ],
+    against: [ :location, :name, :plant_type, :description ],
     using: {
       tsearch: { prefix: true }
     }
