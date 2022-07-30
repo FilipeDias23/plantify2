@@ -6,11 +6,12 @@
 
 
 .card_row {
-  gap: 25px;
+  gap: 15px;
+  row-gap: 35px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .sort_header {
