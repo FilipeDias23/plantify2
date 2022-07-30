@@ -1,9 +1,9 @@
 .footer {
-  width: 100vw;
+  // width: 100%;
   background: #1B2F33;
   text-align: center;
   color: $color-darkblue;
-  position: absolute;
+  position: relative;
 }
 
 .footer-links {
@@ -40,6 +40,6 @@
 }
 
 body {
-  position: relative;
-  min-height: 100vh;
+  // position: absolute;
+  // min-height: 100vh;
  }
